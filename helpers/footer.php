@@ -16,6 +16,18 @@
     <script src="../assets/js/contact.js"></script>
     <!-- custom js -->
     <script src="../assets/js/custom.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/af-2.3.7/b-1.7.1/r-2.2.9/sp-1.3.0/datatables.min.js"></script>
+    <script>
+    $(document).ready( function () {
+           $('#tabla').DataTable( {
+    responsive: true
+} );
+       } );
+    </script>
+
+
+
+
 </body>
 
 </html>
