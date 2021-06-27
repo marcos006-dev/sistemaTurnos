@@ -99,25 +99,26 @@ comboEspecialidades.addEventListener("change", (e) => {
 
 btnGuardarDoctor.addEventListener("click", (e) => {
   e.preventDefault();
+  guardarDatosDoctores();
 
-  if (
-    nombreDoctor.value.trim() == "" ||
-    apellidoDoctor.value.trim() == "" ||
-    dniDoctor.value.trim() == "" ||
-    telefonoDoctor.value.trim() == "" ||
-    correoDoctor.value.trim() == "" ||
-    comboEspecialidades.value.trim() == "0" ||
-    comboHorariosTrabajos.value.trim() == "0"
-  ) {
-    mostrarMensaje(
-      "alertBtn",
-      "Los campos no puede quedar vacios, por favor verifique!"
-    );
-    desactBtnGuardarDoctor();
-    return false;
-  }
-  mostrarMensaje("alertBtn", "");
-  actBtnGuardarDoctor();
-  console.log("paso");
+  // if (
+  //   nombreDoctor.value.trim() == "" ||
+  //   apellidoDoctor.value.trim() == "" ||
+  //   dniDoctor.value.trim() == "" ||
+  //   telefonoDoctor.value.trim() == "" ||
+  //   correoDoctor.value.trim() == "" ||
+  //   comboEspecialidades.value.trim() == "0" ||
+  //   comboHorariosTrabajos.value.trim() == "0"
+  // ) {
+  //   mostrarMensaje(
+  //     "alertBtn",
+  //     "Los campos no puede quedar vacios, por favor verifique!"
+  //   );
+  //   desactBtnGuardarDoctor();
+  //   return false;
+  // }
+  // mostrarMensaje("alertBtn", "");
+  // actBtnGuardarDoctor();
+  // console.log("paso");
   return true;
 });

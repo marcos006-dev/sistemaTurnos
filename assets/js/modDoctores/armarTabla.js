@@ -37,7 +37,7 @@ const armarTablaTurnosxDia = async (paramIdHorarioTrabajo) => {
   for (let i = 0; i < cantTabla; i++) {
     tablaTurnosxDia += `
     <h3 class="text-center">Turnos Correspondientes a la ${titulosTurnosTabla[i]}</h3>
-    <table class="table table-striped table-bordered dt-responsive nowrap turnosxDia"data-idHorTrab="${paramIdHorarioTrabajo}" style="width:100%">
+    <table class="table table-striped table-bordered dt-responsive nowrap turnosxDia" data-idHorTrab="${paramIdHorarioTrabajo}" style="width:100%">
             <thead>
                   <tr>
                     <th scope="col">Dia</th>
@@ -50,14 +50,14 @@ const armarTablaTurnosxDia = async (paramIdHorarioTrabajo) => {
       tablaTurnosxDia += `
                     <tr>
                         <td>${dia.descripcionDia}</td>
-                        <td><input type="number" class="single-input" id="" name=""></td>
+                        <td><input type="number" class="single-input" id="" name="" value="1"></td>
                     </tr>
         `;
     });
     tablaTurnosxDia += `
     </tbody>
     <table>`;
-    console.log(tablaTurnosxDia);
+    // console.log(tablaTurnosxDia);
   }
   divTablaTurnosxDia.innerHTML = tablaTurnosxDia;
 };

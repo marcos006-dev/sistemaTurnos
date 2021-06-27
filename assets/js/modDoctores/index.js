@@ -7,6 +7,7 @@ const comboEspecialidades = document.getElementById("comboEspecialidades");
 const comboHorariosTrabajos = document.getElementById("comboHorariosTrabajos");
 const btnGuardarDoctor = document.getElementById("btnGuardarDoctor");
 const divTablaTurnosxDia = document.getElementById("tablaTurnosxDia");
+
 const getDatosJson = async (paramUrl) => {
   return await fetch(paramUrl)
     .then((response) => response.json())
