@@ -20,7 +20,7 @@
     <!-- magnific popup CSS -->
     <link rel="stylesheet" href="../assets/css/magnific-popup.css">
     <!-- nice select CSS -->
-    <link rel="stylesheet" href="../assets/css/nice-select.css">
+    <!-- <link rel="stylesheet" href="../assets/css/nice-select.css"> -->
     <!-- swiper CSS -->
     <link rel="stylesheet" href="../assets/css/slick.css">
     <!-- style CSS -->
@@ -53,7 +53,7 @@
                                     <a class="nav-link" href="about.html">Turnos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Doctor.html">Doctores</a>
+                                    <a class="nav-link" href="../modDoctores/index.php">Doctores</a>
                                 </li>
 
                                 <!-- <li class="nav-item dropdown">
