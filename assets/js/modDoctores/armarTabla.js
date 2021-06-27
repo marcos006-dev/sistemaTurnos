@@ -50,14 +50,14 @@ const armarTablaTurnosxDia = async (paramIdHorarioTrabajo) => {
       tablaTurnosxDia += `
                     <tr>
                         <td>${dia.descripcionDia}</td>
-                        <td><input type="number" class="single-input" id="" name=""></td>
+                        <td><input type="number" class="single-input inputCantDia" name="inputCantDia" data-idDia=${dia.idDia} data-idHorarTrab =${paramIdHorarioTrabajo} value="0"></td>
                     </tr>
         `;
     });
     tablaTurnosxDia += `
     </tbody>
     <table>`;
-    console.log(tablaTurnosxDia);
+    // console.log(tablaTurnosxDia);
   }
   divTablaTurnosxDia.innerHTML = tablaTurnosxDia;
 };

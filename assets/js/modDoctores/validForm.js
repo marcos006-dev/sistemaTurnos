@@ -46,6 +46,7 @@ apellidoDoctor.addEventListener("keyup", (e) => {
 dniDoctor.addEventListener("change", (e) => {
   const PATRONDNI = /^\d{8}(?:[-\s]\d{4})?$/;
 
+  // VERIFICAR FORMATO DE DNI INGRESADO
   if (!e.currentTarget.value.match(PATRONDNI)) {
     mostrarMensaje(
       "alertDni",
@@ -54,10 +55,24 @@ dniDoctor.addEventListener("change", (e) => {
     desactBtnGuardarDoctor();
     return false;
   }
+
+  // VERIFICAR QUE EL DNI INGRESADO NO EXISTA EN LA BD
+
+  verficarDniDoctor(e.currentTarget.value);
+});
+
+const verficarDniDoctor = async (paramDniDoctor) => {
+  let url = `./ajaxDoctores.php?dniDoctor=${paramDniDoctor}&accion=verificarDni`;
+  let result = await getDatosJson(url).then((resultVerif) => resultVerif);
+  if (result.mensaje != "") {
+    mostrarMensaje("alertDni", result.mensaje);
+    desactBtnGuardarDoctor();
+    return false;
+  }
   mostrarMensaje("alertDni", "");
   actBtnGuardarDoctor();
   return true;
-});
+};
 
 telefonoDoctor.addEventListener("change", (e) => {
   const PATRONTELEFONO = /^\d{10}(?:[-\s]\d{4})?$/;
@@ -99,7 +114,6 @@ comboEspecialidades.addEventListener("change", (e) => {
 
 btnGuardarDoctor.addEventListener("click", (e) => {
   e.preventDefault();
-
   if (
     nombreDoctor.value.trim() == "" ||
     apellidoDoctor.value.trim() == "" ||
@@ -118,6 +132,7 @@ btnGuardarDoctor.addEventListener("click", (e) => {
   }
   mostrarMensaje("alertBtn", "");
   actBtnGuardarDoctor();
-  console.log("paso");
+  guardarDatosDoctores();
+  // console.log("paso");
   return true;
 });

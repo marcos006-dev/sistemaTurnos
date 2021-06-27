@@ -7,8 +7,23 @@ const comboEspecialidades = document.getElementById("comboEspecialidades");
 const comboHorariosTrabajos = document.getElementById("comboHorariosTrabajos");
 const btnGuardarDoctor = document.getElementById("btnGuardarDoctor");
 const divTablaTurnosxDia = document.getElementById("tablaTurnosxDia");
+
 const getDatosJson = async (paramUrl) => {
   return await fetch(paramUrl)
+    .then((response) => response.json())
+    .then((datos) => datos)
+    .catch((error) => console.error(error));
+};
+
+const setDatosJson = async (paramUrl, paramData, paramAccion) => {
+  console.log(paramData);
+  let body = new FormData();
+  body.append(paramAccion, JSON.stringify(paramData));
+
+  return await fetch(paramUrl, {
+    method: "POST",
+    body: body,
+  })
     .then((response) => response.json())
     .then((datos) => datos)
     .catch((error) => console.error(error));
