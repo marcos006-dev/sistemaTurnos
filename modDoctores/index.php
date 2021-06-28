@@ -48,9 +48,9 @@
                         <td class="text-center"><?php echo $doctores['emailPersona']; ?></td>
                         <td class="text-center"><?php echo $doctores['descripcionEspecialidad']; ?></td>
 
-                        <td class="text-center"><?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $doctores['idDoctor'] . "' class='btn btn-warning'>Editar</a>" ?></td>
+                        <td class="text-center"><?php echo "<a href='formEditarDoctores.php?id=" . $doctores['idDoctor'] . "' class='btn btn-warning'>Editar</a>" ?></td>
 
-                        <td class="text-center"><?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $doctores['idDoctor'] . "' class='btn btn-danger'>Eliminar</a>" ?></td>
+                        <td class="text-center"><?php echo "<a href='formEditarDoctores.php?id=" . $doctores['idDoctor'] . "' class='btn btn-danger'>Eliminar</a>" ?></td>
                     </tr>
                 <?php endwhile;?>
             </tbody>

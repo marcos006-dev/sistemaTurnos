@@ -73,7 +73,9 @@
         <div class="form-group mt-5">
             <button type="submit" id="btnGuardarDoctor" class="btn btn-primary form-control">Guardar Doctor</button>
             <small class="text-danger" id="alertBtn"></small>
-
+        </div>
+        <div class="form-group">
+            <!-- <button onclick="location.href='index.php'" class="btn btn-warning form-control">Cancelar</button> -->
         </div>
         </form>
       </div>
