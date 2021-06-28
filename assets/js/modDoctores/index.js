@@ -15,6 +15,20 @@ const getDatosJson = async (paramUrl) => {
     .catch((error) => console.error(error));
 };
 
+const setDatosJson = async (paramUrl, paramData, paramAccion) => {
+  console.log(paramData);
+  let body = new FormData();
+  body.append(paramAccion, JSON.stringify(paramData));
+
+  return await fetch(paramUrl, {
+    method: "POST",
+    body: body,
+  })
+    .then((response) => response.json())
+    .then((datos) => datos)
+    .catch((error) => console.error(error));
+};
+
 // funciones activar y desactivar btn de submit
 const desactBtnGuardarDoctor = () => {
   btnGuardarDoctor.setAttribute("disabled", true);
