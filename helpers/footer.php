@@ -23,8 +23,8 @@
     <script src="../assets/js/modDoctores/validForm.js"></script>
     <script src="../assets/js/modDoctores/armarTabla.js"></script>
     <script src="../assets/js/modDoctores/guardarDatosDoctor.js"></script>
-    <script src="../assets/js/modAbmlUsuarios/index.js"></script>
-    <script src="../assets/js/modAbmlUsuarios/validForm.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/indeex.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
 
 
     </body>

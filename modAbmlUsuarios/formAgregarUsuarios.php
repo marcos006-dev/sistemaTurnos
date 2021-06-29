@@ -20,30 +20,29 @@
                 <form id="formAgregDoctor" action="#" method="#">
                     <div class="form-group">
                         <label for="nombreDoctor">Ingrese un nombre de Usuario:</label>
-                        <input type="text" class="single-input" id="nombreDoctor" name="nombreDoctor"
+                        <input type="text" class="single-input" id="nombreUsuario" name="nombreDoctor"
                             aria-describedby="nombreDoctor" autofocus>
-                        <small class="text-danger" id="alertNombre"></small>
+                        <small class="text-danger" id="alertNombreUsuario"></small>
                     </div>
                     <div class="form-group">
                         <label for="apellidoDoctor">Ingrese una Contraseña:</label>
-                        <input type="text" class="single-input" id="apellidoDoctor" name="apellidoDoctor"
+                        <input type="password" class="single-input" id="contrasena" name="contrasena"
                             aria-describedby="apellidoDoctor" autofocus>
-                        <small class="text-danger" id="alertApellido"></small>
+                        <small class="text-danger" id="alertContrasena"></small>
 
                     </div>
                     <div class="form-group">
                         <label for="apellidoDoctor">Vuelva a Ingrese la misma Contraseña:</label>
-                        <input type="text" class="single-input" id="apellidoDoctor" name="apellidoDoctor"
-                            aria-describedby="apellidoDoctor" autofocus>
-                        <small class="text-danger" id="alertApellido"></small>
+                        <input type="password" class="single-input" id="contrasenaVerificacion"
+                            name="contrasenaVerificacion" aria-describedby="apellidoDoctor" autofocus>
+                        <small class="text-danger" id="alertContrasenaVerificada"></small>
 
                     </div>
 
 
                     <div class="form-group">
-                        <label for="comboEspecialidades">Seleccione el Tipo de Usuario:</label>
-                        <select id="comboEspecialidades" class="form-control bg-secondary text-dark"
-                            name="comboEspecialidades">
+                        <label for="comboTipoUsuario">Seleccione el Tipo de Usuario:</label>
+                        <select id="tipoUsuario" class="form-control bg-secondary text-dark" name="tipoUsuario">
                             <option value="0" selected disabled>Elija</option>
                             <?php while ( $tipoUsu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
                             <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
@@ -52,9 +51,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="comboHorariosTrabajos">Seleccione el Estado del Usuario:</label>
-                        <select id="comboHorariosTrabajos" class="form-control bg-secondary text-dark"
-                            name="comboHorariosTrabajos">
+                        <label for="EstadoUsuario">Seleccione el Estado del Usuario:</label>
+                        <select id="estadoUsuario" class="form-control bg-secondary text-dark" name="estadoUsuario">
                             <option value="0" selected disabled>Elija</option>
                             <option value="1">Activo</option>
                             <option value="2">Inactivo</option>
@@ -64,7 +62,7 @@
 
                     </div>
                     <div class="form-group mt-5">
-                        <button type="submit" id="btnGuardarDoctor" class="btn btn-primary form-control">Guardar
+                        <button type="submit" id="btnGuardarUsuario" class="btn btn-primary form-control">Guardar
                             Usuario</button>
                         <small class="text-danger" id="alertBtn"></small>
 
