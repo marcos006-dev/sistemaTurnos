@@ -54,7 +54,7 @@
                                     <a class="nav-link" href="about.html">Turnos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../modAbmlUsuarios/index.php">Usuarios</a>
+                                    <a class="nav-link" href="../modUsuarios/index.php">Usuarios</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../modDoctores/index.php">Doctores</a>
