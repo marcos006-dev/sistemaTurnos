@@ -30,36 +30,36 @@
         <div class="row">
           <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
             <h1 class="text-center">Modificar Doctor: </h1>
-            <input type="hidden" name="idDoctor" value="<?php echo $rowDoctoresEditar["idDoctor"] ?>">
-            <input type="hidden" name="idPersona" value="<?php echo $rowDoctoresEditar["idPersona"] ?>">
+            <input type="hidden" name="idDoctor" id="idDoctor" value="<?php echo $rowDoctoresEditar["idDoctor"] ?>">
+            <input type="hidden" name="idPersona" id="idPersona" value="<?php echo $rowDoctoresEditar["idPersona"] ?>">
             <form id="formAgregDoctor" action="#" method="#">
                 <div class="form-group">
-                    <label for="nombreDoctorEditar">Ingrese un nombre:</label>
-                    <input type="text" class="single-input" id="nombreDoctorEditar" name="nombreDoctorEditar" aria-describedby="nombreDoctorEditar" autofocus value="<?php echo $rowDoctoresEditar["nombrePersona"]; ?>">
+                    <label for="nombreDoctor">Ingrese un nombre:</label>
+                    <input type="text" class="single-input" id="nombreDoctor" name="nombreDoctor" aria-describedby="nombreDoctor" autofocus value="<?php echo $rowDoctoresEditar["nombrePersona"]; ?>">
                     <small class="text-danger" id="alertNombre"></small>
                 </div>
                 <div class="form-group">
-                    <label for="apellidoDoctorEditar">Ingrese un apellido:</label>
-                    <input type="text" class="single-input" id="apellidoDoctorEditar" name="apellidoDoctorEditar" aria-describedby="apellidoDoctorEditar" autofocus value="<?php echo $rowDoctoresEditar["apellidoPersona"]; ?>">
+                    <label for="apellidoDoctor">Ingrese un apellido:</label>
+                    <input type="text" class="single-input" id="apellidoDoctor" name="apellidoDoctor" aria-describedby="apellidoDoctor" autofocus value="<?php echo $rowDoctoresEditar["apellidoPersona"]; ?>">
                     <small class="text-danger" id="alertApellido"></small>
 
                 </div>
                 <div class="form-group">
-                    <label for="dniDoctorEditar">Ingrese un dni:</label>
-                    <input type="number" class="single-input" id="dniDoctorEditar" name="dniDoctorEditar" aria-describedby="dniDoctorEditar" autofocus value="<?php echo $rowDoctoresEditar["dniPersona"]; ?>">
+                    <label for="dniDoctor">Ingrese un dni:</label>
+                    <input type="number" class="single-input" id="dniDoctor" name="dniDoctor" aria-describedby="dniDoctor" autofocus value="<?php echo $rowDoctoresEditar["dniPersona"]; ?>">
                     <small class="text-danger" id="alertDni"></small>
 
                 </div>
                 <div class="form-group">
-                    <label for="telefonoDoctorEditar">Ingrese un telefono:</label>
-                    <input type="number" class="single-input" id="telefonoDoctorEditar" name="telefonoDoctorEditar" aria-describedby="telefonoDoctorEditar" autofocus value="<?php echo $rowDoctoresEditar["telefonoPersona"]; ?>">
+                    <label for="telefonoDoctor">Ingrese un telefono:</label>
+                    <input type="number" class="single-input" id="telefonoDoctor" name="telefonoDoctor" aria-describedby="telefonoDoctor" autofocus value="<?php echo $rowDoctoresEditar["telefonoPersona"]; ?>">
                     <small class="text-danger" id="alertTelefono"></small>
 
                 </div>
 
                 <div class="form-group">
-                    <label for="correoDoctorEditar">Ingrese un Correo:</label>
-                    <input type="text" class="single-input" id="correoDoctorEditar" name="correoDoctorEditar" aria-describedby="correoDoctorEditar" autofocus value="<?php echo $rowDoctoresEditar["emailPersona"]; ?>">
+                    <label for="correoDoctor">Ingrese un Correo:</label>
+                    <input type="text" class="single-input" id="correoDoctor" name="correoDoctor" aria-describedby="correoDoctor" autofocus value="<?php echo $rowDoctoresEditar["emailPersona"]; ?>">
                     <small class="text-danger" id="alertCorreo"></small>
 
                 </div>
@@ -79,8 +79,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="comboHorariosTrabajos">Seleccione un Horario:</label>
-                <select id="comboHorariosTrabajos" class="form-control bg-secondary text-dark" name="comboHorariosTrabajos">
+                <label for="comboHorariosTrabajosEditar">Seleccione un Horario:</label>
+                <select id="comboHorariosTrabajosEditar" class="form-control bg-secondary text-dark" name="comboHorariosTrabajosEditar">
                     <option value="0" selected disabled>Elija</option>
                     <?php while ( $horTrab = $rowHorariosTrabajo->fetch( PDO::FETCH_ASSOC ) ): ?>
 <?php if ( $rowHorariosTrabajoDoctor["idHorarioTrabajo"] == $horTrab["idHorarioTrabajo"] ): ?>
@@ -93,7 +93,7 @@
 <?php endwhile?>
                </select>
            </div>
-           <div class="form-group" id="tablaTurnosxDia">
+           <div class="form-group" id="tablaTurnosxDiaEditar">
 
            </div>
            <div class="form-group mt-5">

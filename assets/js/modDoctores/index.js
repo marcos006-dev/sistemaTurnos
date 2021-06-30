@@ -6,7 +6,6 @@ const correoDoctor = document.getElementById("correoDoctor");
 const comboEspecialidades = document.getElementById("comboEspecialidades");
 const comboHorariosTrabajos = document.getElementById("comboHorariosTrabajos");
 const btnGuardarDoctor = document.getElementById("btnGuardarDoctor");
-const divTablaTurnosxDia = document.getElementById("tablaTurnosxDia");
 
 const getDatosJson = async (paramUrl) => {
   return await fetch(paramUrl)
@@ -16,7 +15,7 @@ const getDatosJson = async (paramUrl) => {
 };
 
 const setDatosJson = async (paramUrl, paramData, paramAccion) => {
-  console.log(paramData);
+  // console.log(paramData);
   let body = new FormData();
   body.append(paramAccion, JSON.stringify(paramData));
 

@@ -23,6 +23,7 @@
     <script src="../assets/js/modDoctores/validForm.js"></script>
     <script src="../assets/js/modDoctores/armarTabla.js"></script>
     <script src="../assets/js/modDoctores/guardarDatosDoctor.js"></script>
+    <script src="../assets/js/modDoctores/modificarDatosDoctor.js"></script>
 </body>
 
 </html>
