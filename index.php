@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +41,7 @@
         <div class="row align-items-center">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg navbar-light">
-              <a class="navbar-brand" href="index.html">
+              <a class="navbar-brand" href="index.php">
                 <img src="assets/img/logo.png" alt="logo" />
               </a>
               <button
@@ -62,21 +67,34 @@
               >
                 <ul class="navbar-nav align-items-center">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="index.php">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Turnos</a>
+                    <a class="nav-link" href="#">Sacar turno</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./modUsuarios/index.php"
-                      >Usuarios</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./modDoctores/index.php"
-                      >Doctores</a
-                    >
-                  </li>
+
+                  <?php if (!isset( $_SESSION['nombreUsuario'] )): ?>
+                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="./modLogin/index.php">Iniciar Sesion</a>
+                      </li>
+                  <?php else: ?>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Listado turnos</a>
+                        </li>
+                        <?php if ($_SESSION['descripcionTipoUsuario'] == "Administrador"): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./modDoctores/index.php">Doctores</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./modUsuarios/index.php">Usuarios</a>
+                        </li>
+                        <?php endif ?>
+                            <li class="nav-item">
+                              <a class="nav-link" href="modLogin/logout.php">Cerrar Sesion</a>
+                            </li>
+
+                  <?php endif ?>
 
                   <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
@@ -99,10 +117,6 @@
                                         <a class="dropdown-item" href="single-blog.html">Single blog</a>
                                     </div>
                                 </li> -->
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Iniciar Sesion</a>
-                  </li>
                 </ul>
               </div>
               <!-- <a class="btn_2 d-none d-lg-block" href="#">HOT LINE- 09856</a> -->

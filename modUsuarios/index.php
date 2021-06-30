@@ -1,3 +1,8 @@
+<?php if (isset( $_SESSION['nombreUsuario'])): ?>
+
+
+
+
 <?php
     require_once "../helpers/head.php";
     require_once "../conexion/conexion.php";
@@ -72,3 +77,14 @@
     require_once "../helpers/footer.php";
 
 ?>
+
+
+<?php else: ?>
+<?php 
+echo '<script language = javascript>
+    alert("Debe iniciar sesion para acceder a este modulo, vuelva a intentarlo")
+    self.location = "../modLogin/index.php"
+    </script>';
+
+ ?>
+<?php endif ?>
