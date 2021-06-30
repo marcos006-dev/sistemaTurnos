@@ -2,7 +2,7 @@
 	
 session_start();
 
-if (isset($_SESSION['usuario'])){	
+if (isset($_SESSION['nombreUsuario'])){	
 	#session_destroy();
 	session_destroy();
 	
