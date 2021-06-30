@@ -7,6 +7,7 @@ require_once "../funciones/getHorariosDoctor.php";
 require_once "./guardarDatosDoctores.php";
 require_once "../funciones/getDni.php";
 require_once "../funciones/getTurnosxDiaDoctor.php";
+require_once "borrarDatosDoctor.php";
 
 $accion = ( !empty( $_GET['accion'] ) ) ? $_GET['accion'] : false;
 $id = ( !empty( $_GET['id'] ) ) ? $_GET['id'] : false;
@@ -70,6 +71,26 @@ if ( $accion == "verificarTurnosDoctor" ) {
 
     }
     echo json_encode( $respuestaJsonHorar );
+}
+
+// BORRAR DOCTOR
+
+if ( $accion == "borrarDoctor" ) {
+
+    $idDoctor = $_GET["idDoctor"];
+
+    // var_dump( $idDoctor );
+
+    $resultBorradoDoctor = getBorrarDatosDoctores( $conexion, $idDoctor );
+    // var_dump( $resultBorradoDoctor );
+    if ( $resultBorradoDoctor ) {
+
+        $respuestaJsonBorradoDoctor = array( 'estado' => 200, 'mensaje' => "Doctor dado de bajo correctamente" );
+    } else {
+        $respuestaJsonBorradoDoctor = array( 'estado' => 200, 'mensaje' => false );
+
+    }
+    echo json_encode( $respuestaJsonBorradoDoctor );
 }
 
 ?>
