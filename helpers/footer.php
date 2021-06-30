@@ -23,7 +23,14 @@
     <script src="../assets/js/modDoctores/validForm.js"></script>
     <script src="../assets/js/modDoctores/armarTabla.js"></script>
     <script src="../assets/js/modDoctores/guardarDatosDoctor.js"></script>
+<<<<<<< HEAD
 </body>
+=======
+    <script src="../assets/js/modAbmlUsuarios/indeex.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
+    <scrpt src="../assets/js/modAbmlUsuarios/ajaxUsuarios.js"></scrpt>
+
+>>>>>>> ABML_Usuarios
 
     </body>
 
