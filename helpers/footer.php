@@ -18,6 +18,7 @@
     <!-- <script src="../assets/js/custom.js"></script> -->
     <script type="text/javascript"
         src="https://cdn.datatables.net/v/bs4/dt-1.10.25/af-2.3.7/b-1.7.1/r-2.2.9/sp-1.3.0/datatables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/js/datatables/index.js"></script>
     <script src="../assets/js/modDoctores/index.js"></script>
     <script src="../assets/js/modDoctores/validForm.js"></script>
@@ -25,7 +26,7 @@
     <script src="../assets/js/modDoctores/guardarDatosDoctor.js"></script>
     <script src="../assets/js/modAbmlUsuarios/indeex.js"></script>
     <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
-    <scrpt src="../assets/js/modAbmlUsuarios/ajaxUsuarios.js"></scrpt>
+    <script src="../assets/js/modAbmlUsuarios/ajaxUsuarios.js"></script>
 
 
     </body>

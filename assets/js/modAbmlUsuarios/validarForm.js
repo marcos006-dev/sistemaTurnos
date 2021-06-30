@@ -1,24 +1,118 @@
+nombrePersona.addEventListener("keyup", (e) => {
+  const PATRONNOMBRE = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
+
+  if (!e.currentTarget.value.match(PATRONNOMBRE)) {
+    ViualizarMensaje(
+      "alertNombre",
+      "No se permite los numeros y espacios en blanco"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+  if (e.currentTarget.value.length < 3) {
+    ViualizarMensaje("alertNombre", "El nombre debe ser mayor a 3 caracteres");
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+
+  ViualizarMensaje("alertNombre", "");
+
+  activarBtnGuardarUsuario();
+  return true;
+});
+
+apellidoPersona.addEventListener("keyup", (e) => {
+  const PATRONAPELLIDO = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
+
+  if (!e.currentTarget.value.match(PATRONAPELLIDO)) {
+    ViualizarMensaje(
+      "alertApellido",
+      "No se permite los numeros y espacios en blanco"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+  if (e.currentTarget.value.length < 3) {
+    ViualizarMensaje(
+      "alertApellido",
+      "El apellido debe ser mayor a 3 caracteres"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+  ViualizarMensaje("alertApellido", " ");
+  activarBtnGuardarUsuario();
+  return true;
+});
+
+dniPersona.addEventListener("keyup", (e) => {
+  const PATRONDNI = /^\d{8}(?:[-\s]\d{4})?$/;
+
+  if (!e.currentTarget.value.match(PATRONDNI)) {
+    ViualizarMensaje(
+      "alertDni",
+      "No se permite las letras y espacios en blanco y debe ser igual a 8 numeros"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+  ViualizarMensaje("alertDni", " ");
+  activarBtnGuardarUsuario();
+  return true;
+});
+
+telefonoPersona.addEventListener("keyup", (e) => {
+  const PATRONTELEFONO = /^\d{10}(?:[-\s]\d{4})?$/;
+
+  if (!e.currentTarget.value.match(PATRONTELEFONO)) {
+    ViualizarMensaje(
+      "alertTelefono",
+      "No se permite las letras y espacios en blanco y debe ser igual a 10 digitos"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+
+  ViualizarMensaje("alertTelefono", " ");
+  activarBtnGuardarUsuario();
+  return true;
+});
+
+correoPersona.addEventListener("change", (e) => {
+  const PATRONCORREO = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
+
+  if (!e.currentTarget.value.match(PATRONCORREO)) {
+    ViualizarMensaje(
+      "alertCorreo",
+      "Formato de correo no valido por favor verifique!"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
+  }
+  ViualizarMensaje("alertCorreo", " ");
+  activarBtnGuardarUsuario();
+  return true;
+});
+
 nombreUsuario.addEventListener("keyup", (e) => {
   const patronNombreUsuario = /^[a-z0-9ü][a-z0-9ü_]{3,9}$/;
 
   if (!e.currentTarget.value.match(patronNombreUsuario)) {
-    mostrarMensaje(
-      "alertNombreUsuario",
-      "No se permite los espacios en blanco"
-    );
-    desactBtnGuardarUsuario();
+    ViualizarMensaje("alertNombreUsuario", "No cumple con los requisitos");
+    desactivarBtnGuardarUsuario();
     return false;
   }
   if (e.currentTarget.value.length < 3) {
-    mostrarMensaje(
+    ViualizarMensaje(
       "alertNombre",
       "El nombre debe ser mayor a 3 caracteres y menor o igual a 9"
     );
-    desactBtnGuardarUsuario();
+    desactivarBtnGuardarUsuario();
     return false;
   }
-  mostrarMensaje("alertNombreUsuario", "");
-  actBtnGuardarUsuario();
+  ViualizarMensaje("alertNombreUsuario", " ");
+  activarBtnGuardarUsuario();
+  peticionNomUsu(e.currentTarget.value);
   return true;
 });
 
@@ -27,23 +121,23 @@ contrasena.addEventListener("keyup", (e) => {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
 
   if (!e.currentTarget.value.match(patronContrasena)) {
-    mostrarMensaje(
+    ViualizarMensaje(
       "alertNombreContrasena",
       "La contraseña no cumple con los requisitos"
     );
-    desactBtnGuardarUsuario();
+    desactivarBtnGuardarUsuario();
     return false;
   }
   if (e.currentTarget.value.length < 8) {
-    mostrarMensaje(
+    ViualizarMensaje(
       "alertContrasena",
       "La contraseña debe tener minimo 8 caracteres"
     );
-    desactBtnGuardarUsuario();
+    desactivarBtnGuardarUsuario();
     return false;
   }
-  mostrarMensaje("alertContrasena", "");
-  actBtnGuardarUsuario();
+  ViualizarMensaje("alertContrasena", " ");
+  activarBtnGuardarUsuario();
   return true, contrasena;
 });
 
@@ -52,32 +146,36 @@ contrasenaVerificacion.addEventListener("keyup", (e, contrasena) => {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
 
   if (!e.currentTarget.value.match(patronContrasenaVerificacion)) {
-    mostrarMensaje(
+    ViualizarMensaje(
       "alertContrasenaVerificada",
       "La contraseña no cumple con los requisitos"
     );
-    desactBtnGuardarUsuario();
+    desactivarBtnGuardarUsuario();
     return false;
   }
   if (e.currentTarget.value != contrasena) {
-    mostrarMensaje("alertContrasenaVerificada", "Las Contraseñas no coinciden");
-    desactBtnGuardarUsuario();
+    ViualizarMensaje(
+      "alertContrasenaVerificada",
+      "Las Contraseñas no coinciden"
+    );
+    desactivarBtnGuardarUsuario();
     return false;
   }
-  mostrarMensaje("alertContrasenaVerificada", "");
-  actBtnGuardarUsuario();
+
+  ViualizarMensaje("alertContrasenaVerificada", " ");
+  activarBtnGuardarUsuario();
   return true;
 });
 
 comboEstadoUsuario.addEventListener("change", (e) => {
   if (e.currentTarget.value != "0") {
-    actBtnGuardarUsuario();
+    activarBtnGuardarUsuario();
   }
 });
 
 comboTipoUsuario.addEventListener("change", (e) => {
   if (e.currentTarget.value != "0") {
-    actBtnGuardarUsuario();
+    activarBtnGuardarUsuario();
   }
 });
 

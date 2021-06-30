@@ -19,9 +19,44 @@
 
                 <form id="formAgregDoctor" action="resultFormAgregarUsuario.php" method="POST">
                     <div class="form-group">
-                        <label for="nombreDoctor">Ingrese un nombre de Usuario:</label>
-                        <input type="text" required class="single-input" id="nombreUsuario" name="nombreDoctor"
-                            aria-describedby="nombreDoctor" autofocus>
+                        <label for="nombrePersona">Ingrese un nombre:</label>
+                        <input type="text" class="single-input" id="nombrePersona" name="nombrePersona"
+                            aria-describedby="nombrePersona" autofocus>
+                        <small class="text-danger" id="alertNombre"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoPersona">Ingrese un apellido:</label>
+                        <input type="text" class="single-input" id="apellidoPersona" name="apellidoPersona"
+                            aria-describedby="apellidoPersona" autofocus>
+                        <small class="text-danger" id="alertApellido"></small>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="dniPersona">Ingrese un dni:</label>
+                        <input type="number" class="single-input" id="dniPersona" name="dniPersona"
+                            aria-describedby="dniPersona" autofocus>
+                        <small class="text-danger" id="alertDni"></small>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoPersona">Ingrese un telefono:</label>
+                        <input type="number" class="single-input" id="telefonoPersona" name="telefonoPersona"
+                            aria-describedby="telefonoPersona" autofocus>
+                        <small class="text-danger" id="alertTelefono"></small>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correoPersona">Ingrese un Correo:</label>
+                        <input type="text" class="single-input" id="correoPersona" name="correoPersona"
+                            aria-describedby="correoPersona" autofocus>
+                        <small class="text-danger" id="alertCorreo"></small>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreUsuario">Ingrese un nombre de Usuario:</label>
+                        <input type="text" required class="single-input" id="nombreUsuario" name="nombreUsuario"
+                            aria-describedby="nombrenombreUsuarioDoctor" autofocus>
                         <small class="text-danger" id="alertNombreUsuario"></small>
                     </div>
                     <div class="form-group">
