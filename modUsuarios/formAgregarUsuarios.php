@@ -17,23 +17,23 @@
             <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
                 <h1 class="text-center">Agregar Usuario</h1>
 
-                <form id="formAgregDoctor" action="#" method="#">
+                <form id="formAgregDoctor" action="resultFormAgregarUsuario.php" method="POST">
                     <div class="form-group">
                         <label for="nombreDoctor">Ingrese un nombre de Usuario:</label>
-                        <input type="text" class="single-input" id="nombreUsuario" name="nombreDoctor"
+                        <input type="text" required class="single-input" id="nombreUsuario" name="nombreDoctor"
                             aria-describedby="nombreDoctor" autofocus>
                         <small class="text-danger" id="alertNombreUsuario"></small>
                     </div>
                     <div class="form-group">
                         <label for="apellidoDoctor">Ingrese una Contraseña:</label>
-                        <input type="password" class="single-input" id="contrasena" name="contrasena"
+                        <input type="password" required class="single-input" id="contrasena" name="contrasena"
                             aria-describedby="apellidoDoctor" autofocus>
                         <small class="text-danger" id="alertContrasena"></small>
 
                     </div>
                     <div class="form-group">
                         <label for="apellidoDoctor">Vuelva a Ingrese la misma Contraseña:</label>
-                        <input type="password" class="single-input" id="contrasenaVerificacion"
+                        <input type="password" required class="single-input" id="contrasenaVerificacion"
                             name="contrasenaVerificacion" aria-describedby="apellidoDoctor" autofocus>
                         <small class="text-danger" id="alertContrasenaVerificada"></small>
 
@@ -42,7 +42,8 @@
 
                     <div class="form-group">
                         <label for="comboTipoUsuario">Seleccione el Tipo de Usuario:</label>
-                        <select id="tipoUsuario" class="form-control bg-secondary text-dark" name="tipoUsuario">
+                        <select id="comboTipoUsuario" required class="form-control bg-secondary text-dark"
+                            name="comboTipoUsuario">
                             <option value="0" selected disabled>Elija</option>
                             <?php while ( $tipoUsu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
                             <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
@@ -52,7 +53,8 @@
                     </div>
                     <div class="form-group">
                         <label for="EstadoUsuario">Seleccione el Estado del Usuario:</label>
-                        <select id="estadoUsuario" class="form-control bg-secondary text-dark" name="estadoUsuario">
+                        <select id="comboEstadoUsuario" required class="form-control bg-secondary text-dark"
+                            name="estadoUsuario">
                             <option value="0" selected disabled>Elija</option>
                             <option value="1">Activo</option>
                             <option value="2">Inactivo</option>

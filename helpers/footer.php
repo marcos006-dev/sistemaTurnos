@@ -25,6 +25,7 @@
     <script src="../assets/js/modDoctores/guardarDatosDoctor.js"></script>
     <script src="../assets/js/modAbmlUsuarios/indeex.js"></script>
     <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
+    <scrpt src="../assets/js/modAbmlUsuarios/ajaxUsuarios.js"></scrpt>
 
 
     </body>

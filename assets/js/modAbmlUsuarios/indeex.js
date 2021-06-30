@@ -1,10 +1,10 @@
 const nombreUsuario = document.getElementById("nombreUsuario");
-const contrasena = document.getElementById("contrasena").value;
+const contrasena = document.getElementById("contrasena");
 const contrasenaVerificacion = document.getElementById(
   "contrasenaVerificacion"
-).value;
-const comboEstadoUsuario = document.getElementById("estadoUsuario");
-const comboTipoUsuario = document.getElementById("tipoUsuario");
+);
+const comboEstadoUsuario = document.getElementById("comboEstadoUsuario");
+const comboTipoUsuario = document.getElementById("comboTipoUsuario");
 const btnGuardarUsuario = document.getElementById("btnGuardarUsuario");
 
 // const getDatosJson = async (paramUrl) => {
@@ -16,11 +16,11 @@ const btnGuardarUsuario = document.getElementById("btnGuardarUsuario");
 
 // funciones activar y desactivar btn de submit
 const desactBtnGuardarUsuario = () => {
-  btnGuardarDoctor.setAttribute("disabled", true);
+  btnGuardarUsuario.setAttribute("disabled", true);
 };
 
 const actBtnGuardarUsuario = () => {
-  btnGuardarDoctor.removeAttribute("disabled");
+  btnGuardarUsuario.removeAttribute("disabled");
 };
 
 // funcion para mostrar mensaje de alerta
