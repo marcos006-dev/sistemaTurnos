@@ -1,9 +1,9 @@
 <?php 
 //Proceso de conexión con la base de datos
 
-require_once'../conexion/conexion.php';
+//require_once('../conexion/conexion.php');
 
-
+echo("HOLA");
 //Inicio de variables de sesión
 if (!isset($_SESION)) {
 	session_start();
