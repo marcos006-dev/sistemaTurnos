@@ -24,7 +24,7 @@
     <script src="../assets/js/modDoctores/validForm.js"></script>
     <script src="../assets/js/modDoctores/armarTabla.js"></script>
     <script src="../assets/js/modDoctores/guardarDatosDoctor.js"></script>
-    </body>
-
-
     <script src="../assets/js/modDoctores/modificarDatosDoctor.js"></script>
+    <script src="../assets/js/modDoctores/eliminarDatosDoctor.js"></script>
+</body>
+</html>
