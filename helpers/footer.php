@@ -26,5 +26,4 @@
     <script src="../assets/js/modDoctores/modificarDatosDoctor.js"></script>
     <script src="../assets/js/modDoctores/eliminarDatosDoctor.js"></script>
 </body>
-
 </html>
