@@ -67,16 +67,29 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Turnos</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./modUsuarios/index.php"
-                      >Usuarios</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./modDoctores/index.php"
-                      >Doctores</a
-                    >
-                  </li>
+                  <?php
+                    if(!isset($_SESSION['nombreUsuario'])){
+                      ?>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./modLogin/index.php">Iniciar Sesion</a>
+                      </li>
+                    <?php
+                    }else{
+                      if($_SESSION['idTipoUsuario'] == 1){
+                        ?><li class="nav-item">
+                        <a class="nav-link" href="./modDoctores/index.php"
+                          >Doctores</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="./modUsuarios/index.php">Usuarios</a>
+                      </li>
+                      <?php
+                      }
+                    }
+                  ?>
+                  
+                  
 
                   <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
@@ -99,10 +112,6 @@
                                         <a class="dropdown-item" href="single-blog.html">Single blog</a>
                                     </div>
                                 </li> -->
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Iniciar Sesion</a>
-                  </li>
                 </ul>
               </div>
               <!-- <a class="btn_2 d-none d-lg-block" href="#">HOT LINE- 09856</a> -->
