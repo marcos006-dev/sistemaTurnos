@@ -3,10 +3,13 @@ comboHorariosTrabajos.addEventListener("change", (e) => {
   //   if (e.currentTarget.value != "0") {
   //     actBtnGuardarDoctor();
   //   }
-  armarTablaTurnosxDia(idHorarioTrabajo);
+  armarTablaTurnosxDia(idHorarioTrabajo, "tablaTurnosxDia");
 });
 
-const armarTablaTurnosxDia = async (paramIdHorarioTrabajo) => {
+async function armarTablaTurnosxDia(
+  paramIdHorarioTrabajo,
+  paramDivMostrarTabla
+) {
   //   Obtencion de los datos provenientes del php
   let urlGetDias = `ajaxDoctores.php?accion=getDias`;
   let resultDatosDias = await getDatosJson(urlGetDias).then(
@@ -59,5 +62,6 @@ const armarTablaTurnosxDia = async (paramIdHorarioTrabajo) => {
     <table>`;
     // console.log(tablaTurnosxDia);
   }
-  divTablaTurnosxDia.innerHTML = tablaTurnosxDia;
-};
+  // console.log(paramDivMostrarTabla);
+  document.getElementById(paramDivMostrarTabla).innerHTML = tablaTurnosxDia;
+}

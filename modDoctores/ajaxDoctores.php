@@ -3,8 +3,10 @@
 require_once "../conexion/conexion.php";
 require_once "../funciones/getDias.php";
 require_once "../funciones/getHorariosTrabajo.php";
+require_once "../funciones/getHorariosDoctor.php";
 require_once "./guardarDatosDoctores.php";
 require_once "../funciones/getDni.php";
+require_once "../funciones/getTurnosxDiaDoctor.php";
 
 $accion = ( !empty( $_GET['accion'] ) ) ? $_GET['accion'] : false;
 $id = ( !empty( $_GET['id'] ) ) ? $_GET['id'] : false;
@@ -47,6 +49,27 @@ if ( $accion == "verificarDni" ) {
 if ( !empty( $_POST ) ) {
     $datosInsertarxDia = json_decode( $_POST['datosArrayxDia'], true );
     echo json_encode( guardarDatosDoctor( $conexion, $datosInsertarxDia ) );
+}
+
+// OPTIONS MODIFY MODDOCTORES
+if ( $accion == "verificarTurnosDoctor" ) {
+
+    $idDoctor = $_GET["idDoctor"];
+    $idHorarioTrabajo = $_GET["idHorarioTrabajo"];
+
+    $rowHorariosTrabajoDoctor = getHorariosxDiaDoctor( $conexion, $idDoctor, $idHorarioTrabajo );
+    if ( $rowHorariosTrabajoDoctor ) {
+
+        $arrayDatosHorarios = array();
+        while ( $rowHorar = $rowHorariosTrabajoDoctor->fetch( PDO::FETCH_ASSOC ) ) {
+            array_push( $arrayDatosHorarios, $rowHorar );
+        }
+        $respuestaJsonHorar = array( 'estado' => 200, 'mensaje' => $arrayDatosHorarios );
+    } else {
+        $respuestaJsonHorar = array( 'estado' => 200, 'mensaje' => false );
+
+    }
+    echo json_encode( $respuestaJsonHorar );
 }
 
 ?>
