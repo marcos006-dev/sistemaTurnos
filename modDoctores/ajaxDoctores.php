@@ -9,6 +9,7 @@ require_once "../funciones/getDni.php";
 require_once "../funciones/getTurnosxDiaDoctor.php";
 require_once "./guardarModifDoctores.php";
 require_once "./borrarDatosDoctor.php";
+require_once "./reactivarDatosDoctor.php";
 
 $accion = ( !empty( $_GET['accion'] ) ) ? $_GET['accion'] : false;
 $id = ( !empty( $_GET['id'] ) ) ? $_GET['id'] : false;
@@ -107,6 +108,24 @@ if ( $accion == "borrarDoctor" ) {
 
     }
     echo json_encode( $respuestaJsonBorradoDoctor );
+}
+
+if ( $accion == "reactivarDoctor" ) {
+
+    $idDoctor = $_GET["idDoctor"];
+
+    // var_dump( $idDoctor );
+
+    $resultReactivarDoctor = getReactivarDatosDoctores( $conexion, $idDoctor );
+    // var_dump( $resultReactivarDoctor );
+    if ( $resultReactivarDoctor ) {
+
+        $respuestaJsonReactivarDoctor = array( 'estado' => 200, 'mensaje' => "Doctor reactivado correctamente" );
+    } else {
+        $respuestaJsonReactivarDoctor = array( 'estado' => 200, 'mensaje' => false );
+
+    }
+    echo json_encode( $respuestaJsonReactivarDoctor );
 }
 
 ?>
