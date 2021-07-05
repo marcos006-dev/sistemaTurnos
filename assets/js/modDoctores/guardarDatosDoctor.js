@@ -34,7 +34,10 @@ const guardarDatosDoctores = async () => {
     timer: 3000,
     text: resultInsertDoctor.mensaje,
   }).then((result) => {
-    if (result.dismiss === Swal.DismissReason.timer) {
+    if (
+      result.dismiss === Swal.DismissReason.timer ||
+      result.isConfirmed == true
+    ) {
       window.location.reload();
     }
   });
