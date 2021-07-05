@@ -1,8 +1,3 @@
-<?php if (isset( $_SESSION['nombreUsuario'])): ?>
-
-
-
-
 <?php
     require_once "../helpers/head.php";
     require_once "../conexion/conexion.php";
@@ -17,6 +12,8 @@
     }
 
 ?>
+
+<?php if (isset( $_SESSION['nombreUsuario'])): ?>
 
 <section class="doctor_part section_padding">
     <div class="container">
