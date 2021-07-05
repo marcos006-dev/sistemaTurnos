@@ -2,7 +2,7 @@
 
 function getHorariosTrabajoDoctor( $paramConexion, $paramIdDoctor ) {
     try {
-        $sqlHorariosTrabajoDoctor = "SELECT * FROM `TurnosxDia` WHERE `idDoctor` = :idDoctor AND `estadoHorario` = 1";
+        $sqlHorariosTrabajoDoctor = "SELECT * FROM `TurnosxDia` WHERE `idDoctor` = :idDoctor AND estadoHorario = 1";
         $statement = $paramConexion->prepare( $sqlHorariosTrabajoDoctor );
         $statement->bindParam( ":idDoctor", $paramIdDoctor );
         $statement->execute();

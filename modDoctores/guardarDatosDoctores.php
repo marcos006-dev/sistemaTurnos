@@ -23,8 +23,8 @@ function guardarDatosDoctor( $paramConexion, $paramDatosDoctorGuardar ) {
         $statement->execute();
         $idDoctorInsertado = $paramConexion->lastInsertId();
 
-        // inseccion de la cantidad de turnos por dia del doctor
         $arrayCantTurnos = $paramDatosDoctorGuardar["cantTurnosxDiaDoctor"];
+        // inseccion de la cantidad de turnos por dia del doctor
 
         for ( $i = 0; $i < count( $arrayCantTurnos ); $i++ ) {
             // var_dump( $arrayCantTurnos[$i] );

@@ -97,7 +97,7 @@
 
            </div>
            <div class="form-group mt-5">
-            <button type="submit" id="btnGuardarDoctor" class="btn btn-warning form-control">Modificar Doctor</button>
+            <button type="submit" id="btnModificarDoctor" class="btn btn-warning form-control">Modificar Doctor</button>
             <small class="text-danger" id="alertBtn"></small>
         </div>
         <div class="form-group">

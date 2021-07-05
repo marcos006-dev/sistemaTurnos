@@ -7,7 +7,8 @@ require_once "../funciones/getHorariosDoctor.php";
 require_once "./guardarDatosDoctores.php";
 require_once "../funciones/getDni.php";
 require_once "../funciones/getTurnosxDiaDoctor.php";
-require_once "borrarDatosDoctor.php";
+require_once "./guardarModifDoctores.php";
+require_once "./borrarDatosDoctor.php";
 
 $accion = ( !empty( $_GET['accion'] ) ) ? $_GET['accion'] : false;
 $id = ( !empty( $_GET['id'] ) ) ? $_GET['id'] : false;
@@ -47,7 +48,7 @@ if ( $accion == "verificarDni" ) {
     // echo json_encode( guardarDatosDoctor( $conexion, $datosInsertarxDia ) );
 }
 
-if ( !empty( $_POST ) ) {
+if ( !empty( $_POST["datosArrayxDia"] ) ) {
     $datosInsertarxDia = json_decode( $_POST['datosArrayxDia'], true );
     echo json_encode( guardarDatosDoctor( $conexion, $datosInsertarxDia ) );
 }
@@ -71,6 +72,21 @@ if ( $accion == "verificarTurnosDoctor" ) {
 
     }
     echo json_encode( $respuestaJsonHorar );
+}
+
+// FUNCION PARA MODIFICAR LOS DATOS DE LOS DOCTORES
+if ( !empty( $_POST["datosArrayxDiaModificar"] ) ) {
+    $datosModifxDia = json_decode( $_POST['datosArrayxDiaModificar'], true );
+    // var_dump( $datosModifxDia );
+    echo json_encode( modificarDatosDoctor( $conexion, $datosModifxDia ) );
+}
+
+// INSERTAR DATOS DESDE EL FORMULARIO DE MODIFICAR
+
+if ( !empty( $_POST["datosArrayxDiaInsertar"] ) ) {
+    $datosInsertarxDia = json_decode( $_POST['datosArrayxDiaInsertar'], true );
+    // var_dump( $datosInsertarxDia );
+    echo json_encode( guardarDatosxDiaDoctor( $conexion, $datosInsertarxDia ) );
 }
 
 // BORRAR DOCTOR

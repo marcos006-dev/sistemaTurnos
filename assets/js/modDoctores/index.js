@@ -1,3 +1,4 @@
+localStorage.clear();
 const nombreDoctor = document.getElementById("nombreDoctor");
 const apellidoDoctor = document.getElementById("apellidoDoctor");
 const dniDoctor = document.getElementById("dniDoctor");
