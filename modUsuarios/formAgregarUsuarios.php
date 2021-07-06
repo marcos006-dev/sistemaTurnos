@@ -22,57 +22,58 @@
                 <form id="formAgregDoctor" action="resultFormAgregarUsuario.php" method="POST">
                     <div class="form-group">
                         <label for="nombrePersona">Ingrese un nombre:</label>
-                        <input type="text" class="single-input" id="nombrePersona" name="nombrePersona"
-                            aria-describedby="nombrePersona" autofocus>
-                        <small class="text-danger" id="alertNombre"></small>
+                        <input type="text" class="form-control bg-secondary text-dark" required id="nombrePersona"
+                            name="nombrePersona" aria-describedby="nombrePersona" autofocus>
+                        <small id="alertNombre"></small>
                     </div>
                     <div class="form-group">
                         <label for="apellidoPersona">Ingrese un apellido:</label>
-                        <input type="text" class="single-input" id="apellidoPersona" name="apellidoPersona"
-                            aria-describedby="apellidoPersona" autofocus>
-                        <small class="text-danger" id="alertApellido"></small>
+                        <input type="text" required class="form-control  bg-secondary text-dark" id="apellidoPersona"
+                            name="apellidoPersona" aria-describedby="apellidoPersona" autofocus>
+                        <small id="alertApellido"></small>
 
                     </div>
                     <div class="form-group">
                         <label for="dniPersona">Ingrese un dni:</label>
-                        <input type="number" class="single-input" id="dniPersona" name="dniPersona"
-                            aria-describedby="dniPersona" autofocus>
-                        <small class="text-danger" id="alertDni"></small>
+                        <input type="number" required class="form-control  bg-secondary text-dark" id="dniPersona"
+                            name="dniPersona" aria-describedby="dniPersona" autofocus>
+                        <small id="alertDni"></small>
 
                     </div>
                     <div class="form-group">
                         <label for="telefonoPersona">Ingrese un telefono:</label>
-                        <input type="number" class="single-input" id="telefonoPersona" name="telefonoPersona"
-                            aria-describedby="telefonoPersona" autofocus>
-                        <small class="text-danger" id="alertTelefono"></small>
+                        <input type="number" required class="form-control  bg-secondary text-dark" id="telefonoPersona"
+                            name="telefonoPersona" aria-describedby="telefonoPersona" autofocus>
+                        <small id="alertTelefono"></small>
 
                     </div>
 
                     <div class="form-group">
                         <label for="correoPersona">Ingrese un Correo:</label>
-                        <input type="text" class="single-input" id="correoPersona" name="correoPersona"
-                            aria-describedby="correoPersona" autofocus>
-                        <small class="text-danger" id="alertCorreo"></small>
+                        <input type="text" required class="form-control  bg-secondary text-dark" id="correoPersona"
+                            name="correoPersona" aria-describedby="correoPersona" autofocus>
+                        <small id="alertCorreo"></small>
 
                     </div>
                     <div class="form-group">
                         <label for="nombreUsuario">Ingrese un nombre de Usuario:</label>
-                        <input type="text" required class="single-input" id="nombreUsuario" name="nombreUsuario"
-                            aria-describedby="nombrenombreUsuarioDoctor" autofocus>
-                        <small class="text-danger" id="alertNombreUsuario"></small>
+                        <input type="text" required class="form-control  bg-secondary text-dark" id="nombreUsuario"
+                            name="nombreUsuario" aria-describedby="nombrenombreUsuarioDoctor" autofocus>
+                        <small id="alertNombreUsuario"></small>
                     </div>
                     <div class="form-group">
                         <label for="apellidoDoctor">Ingrese una Contraseña:</label>
-                        <input type="password" required class="single-input" id="contrasena" name="contrasena"
-                            aria-describedby="apellidoDoctor" autofocus>
-                        <small class="text-danger" id="alertContrasena"></small>
+                        <input type="password" required class="form-control  bg-secondary text-dark" id="contrasena"
+                            name="contrasena" aria-describedby="apellidoDoctor" autofocus>
+                        <small id="alertContrasena"></small>
 
                     </div>
                     <div class="form-group">
                         <label for="apellidoDoctor">Vuelva a Ingrese la misma Contraseña:</label>
-                        <input type="password" required class="single-input" id="contrasenaVerificacion"
-                            name="contrasenaVerificacion" aria-describedby="apellidoDoctor" autofocus>
-                        <small class="text-danger" id="alertContrasenaVerificada"></small>
+                        <input type="password" required class="form-control  bg-secondary text-dark"
+                            id="contrasenaVerificacion" name="contrasenaVerificacion" aria-describedby="apellidoDoctor"
+                            autofocus>
+                        <small id="alertContrasenaVerificada"></small>
 
                     </div>
 
@@ -87,6 +88,7 @@
                                 <?php echo $tipoUsu['descripcionTipoUsuario']; ?></option>
                             <?php endwhile?>
                         </select>
+                        <small id="alertTipoUsuario"></small>
                     </div>
                     <div class="form-group">
                         <label for="EstadoUsuario">Seleccione el Estado del Usuario:</label>
@@ -96,6 +98,7 @@
                             <option value="1">Activo</option>
                             <option value="2">Inactivo</option>
                         </select>
+                        <small id="alertEstado"></small>
                     </div>
                     <div class="form-group" id="tablaTurnosxDia">
 
@@ -103,7 +106,7 @@
                     <div class="form-group mt-5">
                         <button type="submit" id="btnGuardarUsuario" class="btn btn-primary form-control">Guardar
                             Usuario</button>
-                        <small class="text-danger" id="alertBtn"></small>
+                        <small id="alertBtn"></small>
 
                     </div>
                 </form>
