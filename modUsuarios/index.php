@@ -1,8 +1,3 @@
-<?php if (isset( $_SESSION['nombreUsuario'])): ?>
-
-
-
-
 <?php
     require_once "../helpers/head.php";
     require_once "../conexion/conexion.php";
@@ -51,7 +46,7 @@
                             <td class="text-center"><?php echo $Usuarios['descripcionTipoUsuario']; ?></td>
 
                             <td class="text-center">
-                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-success'>Editar</a>" ?>
+                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-success'>Recuperar Cuenta</a>" ?>
                             </td>
 
                             <td class="text-center">
@@ -77,14 +72,3 @@
     require_once "../helpers/footer.php";
 
 ?>
-
-
-<?php else: ?>
-<?php 
-echo '<script language = javascript>
-    alert("Debe iniciar sesion para acceder a este modulo, vuelva a intentarlo")
-    self.location = "../modLogin/index.php"
-    </script>';
-
- ?>
-<?php endif ?>

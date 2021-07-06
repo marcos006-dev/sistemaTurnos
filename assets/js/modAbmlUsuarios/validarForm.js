@@ -1,25 +1,35 @@
 nombrePersona.addEventListener("keyup", (e) => {
+  const nombrePer = e.target.value;
+  validarNombrePersona(nombrePer);
+});
+
+const validarNombrePersona = (paramNombrePers) => {
   const PATRONNOMBRE = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
 
-  if (!e.currentTarget.value.match(PATRONNOMBRE)) {
+  if (!paramNombrePers.match(PATRONNOMBRE)) {
     ViualizarMensaje(
       "alertNombre",
-      "No se permite los numeros y espacios en blanco"
+      "No se permite los numeros y espacios en blanco",
+      "text-danger"
     );
     desactivarBtnGuardarUsuario();
-    return false;
+  } else {
+    ViualizarMensaje("alertNombre", "✔", "text-success");
+    activarBtnGuardarUsuario();
   }
-  if (e.currentTarget.value.length < 3) {
-    ViualizarMensaje("alertNombre", "El nombre debe ser mayor a 3 caracteres");
+
+  if (paramNombrePers.length < 3) {
+    ViualizarMensaje(
+      "alertNombre",
+      "No se permite los numeros y espacios en blanco",
+      "text-danger"
+    );
     desactivarBtnGuardarUsuario();
-    return false;
+  } else {
+    ViualizarMensaje("alertNombre", "✔", "text-success");
+    activarBtnGuardarUsuario();
   }
-
-  ViualizarMensaje("alertNombre", "");
-
-  activarBtnGuardarUsuario();
-  return true;
-});
+};
 
 apellidoPersona.addEventListener("keyup", (e) => {
   const PATRONAPELLIDO = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
