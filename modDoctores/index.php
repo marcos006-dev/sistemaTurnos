@@ -13,6 +13,8 @@ try {
 
 ?>
 
+<?php if (isset( $_SESSION['nombreUsuario'])): ?>
+
 <section class="doctor_part section_padding">
   <div class="container">
     <div class="row">
@@ -71,3 +73,12 @@ try {
 require_once "../helpers/footer.php";
 
 ?>
+<?php else: ?>
+<?php 
+echo '<script language = javascript>
+    alert("Debe iniciar sesion para acceder a este modulo, vuelva a intentarlo")
+    self.location = "../modLogin/index.php"
+    </script>';
+
+ ?>
+<?php endif ?>
