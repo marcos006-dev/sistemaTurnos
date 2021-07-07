@@ -455,20 +455,20 @@ asignarBtnGuardarUsuario.addEventListener("click", (e) => {
   } else {
     e.preventDefault();
     const datosForm = new FormData();
-    console.log(dataIdPersona);
-    let dataIdPersona = document
-      .getElementById("idPersona")
-      .getAttribute("data-idPersona");
-
+    const idPersona =
+      asignarComboDoctor.options[asignarComboDoctor.selectedIndex].getAttribute(
+        "data-idPersona"
+      );
+    console.log(idPersona);
     datosForm.append("asignarNombreUsuario", asignarNombreUsuario.value);
     datosForm.append("asignarContrasena", asignarContrasena.value);
     datosForm.append("asignarComboTipoUsuario", asignarComboTipoUsuario.value);
-    datosForm.append("idPersona", dataIdPersona);
+    datosForm.append("idPersona", idPersona);
     fetch("./guardarPersonaConUsuario.php", {
       method: "POST",
       body: datosForm,
     })
-      .then((res) => res.text())
+      .then((res) => res.json())
       .then((datos) => {
         console.log(datos);
 

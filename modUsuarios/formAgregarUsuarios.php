@@ -136,7 +136,7 @@
                     <form id="asignarFormAgregDoctor">
 
                         <div class="form-group">
-                            <label for="comboTipoUsuario">Seleccione un Doctor:</label>
+                            <label for="asignarComboDoctor">Seleccione un Doctor:</label>
                             <select id="asignarDoctor" class="form-control bg-secondary text-dark"
                                 name="asignarComboDoctor">
                                 <option value="0" selected disabled>Elija</option>

@@ -11,7 +11,7 @@ $asignarIdpersona = $_POST['idPersona'];
 
 if ( !empty($asignarNombreUsuario) && !empty($asignarContrasena) && !empty($asignarTipoUsuario)) {
     
-      $sqlInsertarPersonaUsuario = "INSERT INTO `Usuarios`( `nombreUsuario`, `contrasenaUsuario`, `estadoUsuario`, `idTipoUsuario`, `idPersona`, `token`) VALUES (:nombreUsuario,:asignarContrasena,'1',:asignarTipoUsuario,:asignarIdpersona,'')";
+      $sqlInsertarPersonaUsuario = "INSERT INTO `Usuarios`( `nombreUsuario`, `contrasenaUsuario`, `estadoUsuario`, `idTipoUsuario`, `idPersona`, `token`) VALUES (:nombreUsuario,MD5(:asignarContrasena),'1',:asignarTipoUsuario,:asignarIdpersona,'')";
         $statement = $conexion->prepare( $sqlInsertarPersonaUsuario );
         // $statement->bindParam( ":asignarDoctor", $asignarDoctor );
         $statement->bindParam( ":nombreUsuario", $asignarNombreUsuario );
