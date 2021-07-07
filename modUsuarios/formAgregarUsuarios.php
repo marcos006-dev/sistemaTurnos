@@ -127,13 +127,13 @@
 
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
-                    <h1 class="text-center">Agregar Usuario Completo</h1>
+                    <h1 class="text-center">Asigne un Usuario </h1>
 
-                    <form id="formAgregDoctor">
+                    <form id="asignarFormAgregDoctor">
 
                         <div class="form-group">
                             <label for="comboTipoUsuario">Seleccione un Doctor:</label>
-                            <select id="comboTipoUsuario" class="form-control bg-secondary text-dark"
+                            <select id="asignarTipoUsuario" class="form-control bg-secondary text-dark"
                                 name="comboTipoUsuario">
                                 <option value="0" selected disabled>Elija</option>
                                 <?php while ( $doctor = $rowDoctores->fetch( PDO::FETCH_ASSOC ) ): ?>
@@ -144,62 +144,58 @@
                             <small id="alertTipoUsuario"></small>
                         </div>
 
-                </div>
-                <div class="form-group">
-                    <label for="nombreUsuario">Ingrese un nombre de Usuario:</label>
-                    <input type="text" class="form-control  bg-secondary text-dark" id="nombreUsuario"
-                        name="nombreUsuario" aria-describedby="nombrenombreUsuarioDoctor" autofocus>
-                    <small id="alertNombreUsuario"></small>
-                </div>
-                <div class="form-group">
-                    <label for="apellidoDoctor">Ingrese una Contraseña:</label>
-                    <input type="password" class="form-control  bg-secondary text-dark" id="contrasena"
-                        name="contrasena" aria-describedby="apellidoDoctor" autofocus>
-                    <small id="alertContrasena"></small>
 
+                        <div class="form-group">
+                            <label for="nombreUsuario">Ingrese un nombre de Usuario:</label>
+                            <input type="text" class="form-control  bg-secondary text-dark" id="asignarNombreUsuario"
+                                name="nombreUsuario" aria-describedby="nombrenombreUsuarioDoctor" autofocus>
+                            <small id="alertNombreUsuario"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidoDoctor">Ingrese una Contraseña:</label>
+                            <input type="password" class="form-control  bg-secondary text-dark" id="asignarContrasena"
+                                name="contrasena" aria-describedby="apellidoDoctor" autofocus>
+                            <small id="alertContrasena"></small>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidoDoctor">Vuelva a Ingrese la misma Contraseña:</label>
+                            <input type="password" class="form-control  bg-secondary text-dark"
+                                id="asignarContrasenaVerificacion" name="contrasenaVerificacion"
+                                aria-describedby="apellidoDoctor" autofocus>
+                            <small id="alertContrasenaVerificada"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="comboTipoUsuario">Seleccione el Tipo de Usuario:</label>
+                            <select id="asignarComboTipoUsuario" class="form-control bg-secondary text-dark"
+                                name="comboTipoUsuario">
+                                <option value="0" selected disabled>Elija</option>
+                                <?php while ( $tipoUsu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
+                                <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
+                                    <?php echo $tipoUsu['descripcionTipoUsuario']; ?></option>
+                                <?php endwhile?>
+                            </select>
+                            <small id="alertTipoUsuario"></small>
+                        </div>
+
+
+                        <div class="form-group mt-5">
+                            <button type="submit" id="asignarBtnGuardarUsuario"
+                                class="btn btn-primary form-control">Guardar
+                                Usuario</button>
+                            <small id="alertBtn"></small>
+
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="apellidoDoctor">Vuelva a Ingrese la misma Contraseña:</label>
-                    <input type="password" class="form-control  bg-secondary text-dark" id="contrasenaVerificacion"
-                        name="contrasenaVerificacion" aria-describedby="apellidoDoctor" autofocus>
-                    <small id="alertContrasenaVerificada"></small>
-
-                </div>
-
-
-                <div class="form-group">
-                    <label for="comboTipoUsuario">Seleccione el Tipo de Usuario:</label>
-                    <select id="comboTipoUsuario" class="form-control bg-secondary text-dark" name="comboTipoUsuario">
-                        <option value="0" selected disabled>Elija</option>
-                        <?php while ( $tipoUsu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
-                        <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
-                            <?php echo $tipoUsu['descripcionTipoUsuario']; ?></option>
-                        <?php endwhile?>
-                    </select>
-                    <small id="alertTipoUsuario"></small>
-                </div>
-
-                <div class="form-group">
-
-                </div>
-                <div class="form-group mt-5">
-                    <button type="submit" id="btnGuardarUsuario" class="btn btn-primary form-control">Guardar
-                        Usuario</button>
-                    <small id="alertBtn"></small>
-
-                </div>
-                </form>
             </div>
         </div>
+
+    </section>
 </div>
-</section>
-</div>
-
-
-
-
-
-
 
 
 <?php
