@@ -13,7 +13,7 @@
 
 ?>
 
-<?php if (isset( $_SESSION['nombreUsuario'])): ?>
+<?php if ( isset( $_SESSION['nombreUsuario'] ) ): ?>
 
 <section class="doctor_part section_padding">
     <div class="container">
@@ -63,6 +63,7 @@
                     </tbody>
                 </table>
                 <?php endif?>
+<?php endif?>
             </div>
         </div>
     </div>
