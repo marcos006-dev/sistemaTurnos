@@ -52,7 +52,7 @@
                                         </td>
 
                                         <td class="text-center">
-                                            <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-warning'>Editar</a>" ?>
+                                            <?php echo "<a href='editarUsuario.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-warning'>Editar</a>" ?>
                                         </td>
                                         <?php if ( $Usuarios["estadoUsuario"] == "1" ): ?>
 
