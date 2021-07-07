@@ -88,17 +88,8 @@
                         </select>
                         <small id="alertTipoUsuario"></small>
                     </div>
+
                     <div class="form-group">
-                        <label for="EstadoUsuario">Seleccione el Estado del Usuario:</label>
-                        <select id="comboEstadoUsuario" required class="form-control bg-secondary text-dark"
-                            name="estadoUsuario">
-                            <option value="0" selected disabled>Elija</option>
-                            <option value="1">Activo</option>
-                            <option value="2">Inactivo</option>
-                        </select>
-                        <small id="alertEstado"></small>
-                    </div>
-                    <div class="form-group" id="tablaTurnosxDia">
 
                     </div>
                     <div class="form-group mt-5">
