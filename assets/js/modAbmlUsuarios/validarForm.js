@@ -32,28 +32,35 @@ const validarNombrePersona = (paramNombrePers) => {
 };
 
 apellidoPersona.addEventListener("keyup", (e) => {
+  const apellidoPer = e.target.value;
+  validarApellidoPersona(apellidoPer);
+});
+
+const validarApellidoPersona = (paramApellidoPer) => {
   const PATRONAPELLIDO = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/;
 
-  if (!e.currentTarget.value.match(PATRONAPELLIDO)) {
+  if (!paramApellidoPer.match(PATRONAPELLIDO)) {
     ViualizarMensaje(
       "alertApellido",
-      "No se permite los numeros y espacios en blanco"
+      "No se permite los numeros y espacios en blanco",
+      "text-danger"
     );
     desactivarBtnGuardarUsuario();
     return false;
   }
-  if (e.currentTarget.value.length < 3) {
+  if (paramApellidoPer.length < 3) {
     ViualizarMensaje(
       "alertApellido",
-      "El apellido debe ser mayor a 3 caracteres"
+      "No se permite los numeros y espacios en blanco",
+      "text-danger"
     );
     desactivarBtnGuardarUsuario();
     return false;
+  } else {
+    ViualizarMensaje("alertApellido", "✔", "text-success");
+    activarBtnGuardarUsuario();
   }
-  ViualizarMensaje("alertApellido", " ");
-  activarBtnGuardarUsuario();
-  return true;
-});
+};
 
 dniPersona.addEventListener("keyup", (e) => {
   const PATRONDNI = /^\d{8}(?:[-\s]\d{4})?$/;

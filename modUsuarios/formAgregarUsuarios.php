@@ -22,7 +22,7 @@
                         <label for="nombrePersona">Ingrese un nombre:</label>
                         <input type="text" class="form-control bg-secondary text-dark" required id="nombrePersona"
                             name="nombrePersona" aria-describedby="nombrePersona" autofocus>
-                        <small id="alertNombre" class="text-danger"></small>
+                        <small id="alertNombre"></small>
                     </div>
                     <div class="form-group">
                         <label for="apellidoPersona">Ingrese un apellido:</label>
