@@ -13,8 +13,8 @@
 <section class="doctor_part section_padding">
 
  <div class="container">
-    <div class="row">
-      <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row justify-content-center">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-xs-8 ">
             <h1 class="text-center">Cargar Doctor</h1>
 
         <form id="formAgregDoctor" action="#" method="#">
@@ -71,7 +71,7 @@
 
             </div>
         <div class="form-group mt-5">
-            <button type="submit" id="btnGuardarDoctor" class="btn btn-success form-control">Guardar Doctor</button>
+            <button type="submit" id="btnGuardarDoctor" class="btn btn-primary form-control">Guardar Doctor</button>
             <small class="text-danger" id="alertBtn"></small>
         </div>
         <div class="form-group">

@@ -30,8 +30,8 @@
 
         <div class="container">
 
-            <div class="row">
-                <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-xs-8 ">
                     <h1 class="text-center">Agregar Usuario Completo</h1>
 
                     <form id="formAgregPersonaUsuario">
@@ -113,7 +113,7 @@
                             <button type="submit" id="btnGuardarUsuario" class="btn btn-primary form-control">Guardar
                                 Usuario</button>
                             <small id="alertBtn"></small>
-
+<input type="button" class=" btn btn-danger form-control mt-4" onClick="location.href='index.php'" value="Cancelar">
                         </div>
                     </form>
                 </div>
@@ -129,8 +129,8 @@
 
         <div class="container">
 
-            <div class="row">
-                <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+           <div class="row justify-content-center">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-xs-8 ">
                     <h1 class="text-center">Asigne un Usuario </h1>
 
                     <form id="asignarFormAgregDoctor">
@@ -192,6 +192,7 @@
                                 class="btn btn-primary form-control">Guardar
                                 Usuario</button>
 
+<input type="button" class=" btn btn-danger form-control mt-4" onClick="location.href='index.php'" value="Cancelar">
 
                         </div>
                     </form>

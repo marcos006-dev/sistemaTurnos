@@ -27,8 +27,8 @@
 <section class="doctor_part section_padding">
 
     <div class="container">
-        <div class="row">
-          <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row justify-content-center">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-xs-8 ">
             <h1 class="text-center">Modificar Doctor: </h1>
             <input type="hidden" name="idDoctor" id="idDoctor" value="<?php echo $rowDoctoresEditar["idDoctor"] ?>">
             <input type="hidden" name="idPersona" id="idPersona" value="<?php echo $rowDoctoresEditar["idPersona"] ?>">

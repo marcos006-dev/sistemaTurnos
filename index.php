@@ -91,7 +91,7 @@
                         </li>
                         <?php endif?>
                             <li class="nav-item">
-                              <a class="nav-link" href="../modLogin/logout.php">Cerrar Sesion <b> (<?php echo $_SESSION["nombreUsuario"]; ?>)</b></a>
+                              <a class="nav-link" href="./modLogin/logout.php">Cerrar Sesion <b> (<?php echo $_SESSION["nombreUsuario"]; ?>)</b></a>
                             </li>
 
                   <?php endif?>
@@ -134,14 +134,14 @@
           <div class="col-lg-5 col-xl-5">
             <div class="banner_text">
               <div class="banner_text_iner">
-                <h5>We are here for your care</h5>
-                <h1>Best Care & Better Doctor</h1>
+                <!-- <h5>We are here for your care</h5> -->
+                <h1>TU SALUD ESTA PRIMERO</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
                   eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Quis ipsum suspendisse ultrices gravida.Risus cmodo viverra
                 </p>
-                <a href="#" class="btn_2">Make an appointment</a>
+                <a href="#" class="btn_2">Obten tu turno con un click!</a>
               </div>
             </div>
           </div>
@@ -313,11 +313,11 @@
         <div class="row justify-content-center">
           <div class="col-xl-8">
             <div class="section_tittle text-center">
-              <h2>Experienced Doctors</h2>
-              <p>
+              <h2>LOS MEJORES ESPECIALISTAS</h2>
+              <!-- <p>
                 Face replenish sea good winged bearing years air divide wasHave
                 night male also
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
@@ -346,7 +346,7 @@
               <div class="single_text">
                 <div class="single_blog_text">
                   <h3>DR Adam Billiard</h3>
-                  <p>Heart specialist</p>
+                  <p>CARDIOLOGO</p>
                 </div>
               </div>
             </div>
@@ -375,7 +375,7 @@
               <div class="single_text">
                 <div class="single_blog_text">
                   <h3>DR Adam Billiard</h3>
-                  <p>Medicine specialist</p>
+                  <p>OFTAMOLOGO</p>
                 </div>
               </div>
             </div>
@@ -404,7 +404,7 @@
               <div class="single_text">
                 <div class="single_blog_text">
                   <h3>DR Fred Macyard</h3>
-                  <p>CHeart specialist</p>
+                  <p>NEUROLOGO</p>
                 </div>
               </div>
             </div>
@@ -433,7 +433,7 @@
               <div class="single_text">
                 <div class="single_blog_text">
                   <h3>DR Justin Stuard</h3>
-                  <p>Heart specialist</p>
+                  <p>PEDIATRA</p>
                 </div>
               </div>
             </div>
@@ -450,14 +450,14 @@
           <div class="col-lg-7">
             <div class="regervation_part_iner">
               <form>
-                <h2>Make an Appointment</h2>
+                <h2>¿TIENES ALGUNA DUDA? HÁZNOSLO SABER!</h2>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <input
                       type="email"
                       class="form-control"
                       id="inputEmail4"
-                      placeholder="Name"
+                      placeholder="NOMBRE"
                     />
                   </div>
                   <div class="form-group col-md-6">
@@ -465,10 +465,10 @@
                       type="password"
                       class="form-control"
                       id="inputPassword4"
-                      placeholder="Email address"
+                      placeholder="CORREO"
                     />
                   </div>
-                  <div class="form-group col-md-6">
+                  <!-- <div class="form-group col-md-6">
                     <select class="form-control" id="Select">
                       <option value="1" selected>Select service</option>
                       <option value="2">Name of service</option>
@@ -476,18 +476,13 @@
                       <option value="4">Name of service</option>
                       <option value="5">Name of service</option>
                     </select>
-                  </div>
-                  <div class="form-group time_icon col-md-6">
+                  </div> -->
+                  <div class="form-group col-md-12">
                     <select class="form-control" id="Select2">
-                      <option value="" selected>Time</option>
-                      <option value="1">8 AM TO 10AM</option>
-                      <option value="1">10 AM TO 12PM</option>
-                      <option value="1">12PM TO 2PM</option>
-                      <option value="1">2PM TO 4PM</option>
-                      <option value="1">4PM TO 6PM</option>
-                      <option value="1">6PM TO 8PM</option>
-                      <option value="1">4PM TO 10PM</option>
-                      <option value="1">10PM TO 12PM</option>
+                      <option value="" selected>ELIJA UNA OPCIÓN</option>
+                      <option value="1">COMENTARIO</option>
+                      <option value="1">DUDA</option>
+                      <option value="1">QUEJA</option>
                     </select>
                   </div>
                   <div class="form-group col-md-12">
@@ -495,12 +490,12 @@
                       class="form-control"
                       id="Textarea"
                       rows="4"
-                      placeholder="Your Note "
+                      placeholder="INGRESA TU CONSULTA"
                     ></textarea>
                   </div>
                 </div>
                 <div class="regerv_btn">
-                  <a href="#" class="btn_2">Make an Appointment</a>
+                  <a href="#" class="btn_2">ENVIAR!</a>
                 </div>
               </form>
             </div>
@@ -650,9 +645,8 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              All rights reserved | This template is made with
-              <i class="ti-heart" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- <i class="ti-heart" aria-hidden="true"></i> by -->
+              <!-- <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             <div

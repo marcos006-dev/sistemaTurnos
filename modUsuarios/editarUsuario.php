@@ -36,8 +36,8 @@
 
         <div class="container">
 
-            <div class="row">
-                <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-md-8 col-sm-8 col-xs-8 ">
                     <h1 class="text-center">Editar Usuario</h1>
 
                     <form id="formAgregDoctor" action="./guardarModifUsuarios.php" method="POST">
@@ -142,6 +142,7 @@
                             Usuario</button>
                             <small id="alertBtn"></small>
 
+<input type="button" class=" btn btn-danger form-control mt-4" onClick="location.href='index.php'" value="Cancelar">
                         </div>
                     </form>
                 </div>
