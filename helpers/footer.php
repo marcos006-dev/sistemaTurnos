@@ -31,6 +31,8 @@
     <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
     <script src="../assets/js/modAbmlUsuarios/confirmarRecup.js"></script>
     <script src="../assets/js/modAbmlUsuarios/navigationsTabs.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/eliminarUsuario.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/reactivarUsuario.js"></script>
     </body>
 
     </html>
