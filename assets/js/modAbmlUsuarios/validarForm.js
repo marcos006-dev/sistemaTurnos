@@ -51,7 +51,7 @@ const validarNombrePersona = (paramNombrePers) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
-  } else if (paramNombrePers.length < 3) {
+  } else if (paramNombrePers.length < 3 || paramNombrePers.length == 0) {
     ViualizarMensaje(
       "alertNombre",
       "No se permite los numeros y espacios en blanco",
@@ -76,7 +76,7 @@ const validarApellidoPersona = (paramApellidoPer) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
-  } else if (paramApellidoPer.length < 3) {
+  } else if (paramApellidoPer.length < 3 || paramApellidoPer.length == 0) {
     ViualizarMensaje(
       "alertApellido",
       "No se permite los numeros y espacios en blanco",
@@ -101,6 +101,10 @@ const validarDniPersona = (paramDni) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
+  } else if (paramDni.length == 0) {
+    ViualizarMensaje("alertDni", "Debe rellenar el campo", "text-danger");
+    desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertDni", "✔", "text-success");
     activarBtnGuardarUsuario();
@@ -116,6 +120,10 @@ const validarTelefonoPersona = (paramTelefono) => {
       "No se permite las letras y espacios en blanco y debe ser igual a 10 digitos",
       "text-danger"
     );
+    desactivarBtnGuardarUsuario();
+    return false;
+  } else if (paramTelefono.length == 0) {
+    ViualizarMensaje("alertTelefono", "Debe Rellenar el campo", "text-danger");
     desactivarBtnGuardarUsuario();
     return false;
   } else {
@@ -135,6 +143,10 @@ const validarCorreoPersona = (paramCorreo) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
+  } else if (paramCorreo.length == 0) {
+    ViualizarMensaje("alertCorreo", "Debe rellena el campo", "text-danger");
+    desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertCorreo", "✔", "text-success");
     activarBtnGuardarUsuario();
@@ -152,7 +164,7 @@ const validarNombreUsuario = (paramNombreUsuario) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
-  } else if (paramNombreUsuario.length < 3) {
+  } else if (paramNombreUsuario.length < 3 || paramNombreUsuario.length == 0) {
     ViualizarMensaje(
       "alertNombre",
       "El nombre debe ser mayor a 3 caracteres y menor o igual a 9",
@@ -178,7 +190,7 @@ const validarContrasena = (paramContrasena) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
-  } else if (patronContrasena.length < 8) {
+  } else if (patronContrasena.length < 8 || patronContrasena.length == 0) {
     ViualizarMensaje(
       "alertContrasena",
       "La contraseña debe tener minimo 8 caracteres",
@@ -212,6 +224,17 @@ const validarContrasenaVerificar = (paramContrasenaVerificar) => {
     );
     desactivarBtnGuardarUsuario();
     return false;
+  } else if (
+    paramContrasenaVerificar.length < 8 ||
+    paramContrasenaVerificar.length == 0
+  ) {
+    ViualizarMensaje(
+      "alertContrasenaVerificada",
+      "La contraseña debe tener minimo 8 caracteres",
+      "text-danger"
+    );
+    desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertContrasenaVerificada", "✔", "text-success");
     activarBtnGuardarUsuario();
@@ -222,7 +245,7 @@ const validarTipoUsuario = (paramTipoUsuario) => {
   if (paramTipoUsuario != "1") {
     ViualizarMensaje(
       "alertTipoUsuario",
-      "Las Contraseñas no coinciden",
+      "Debe seleccionar una opcion",
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
@@ -234,4 +257,35 @@ const validarTipoUsuario = (paramTipoUsuario) => {
   }
 };
 
-btnGuardarUsuario.addEventListener("click", (e) => {});
+btnGuardarUsuario.addEventListener("click", (e) => {
+  if (validarNombrePersona(nombrePersona.value) == false) {
+    e.preventDefault();
+  } else if (validarApellidoPersona(apellidoPersona.value) == false) {
+    e.preventDefault();
+  } else if (validarDniPersona(dniPersona.value) == false) {
+    e.preventDefault();
+  } else if (validarTelefonoPersona(telefonoPersona.value) == false) {
+    e.preventDefault();
+  } else if (validarCorreoPersona(correoPersona.value) == false) {
+    e.preventDefault();
+  } else if (validarNombreUsuario(nombreUsuario.value) == false) {
+    e.preventDefault();
+  } else if (validarContrasena(contrasena.value) == false) {
+    e.preventDefault();
+  } else if (
+    validarContrasenaVerificar(contrasenaVerificacion.value) == false
+  ) {
+    e.preventDefault();
+  } else if (validarTipoUsuario(comboTipoUsuario.value) == false) {
+    e.preventDefault();
+  } else {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "El Usuario se ha Registrado con Exito",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    location.reload();
+  }
+});

@@ -9,7 +9,7 @@ const contrasena = document.getElementById("contrasena");
 const contrasenaVerificacion = document.getElementById(
   "contrasenaVerificacion"
 );
-const comboEstadoUsuario = document.getElementById("comboEstadoUsuario");
+
 const comboTipoUsuario = document.getElementById("comboTipoUsuario");
 const btnGuardarUsuario = document.getElementById("btnGuardarUsuario");
 
