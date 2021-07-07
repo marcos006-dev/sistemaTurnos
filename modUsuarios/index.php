@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> main
 <?php
     require_once "../helpers/head.php";
     require_once "../conexion/conexion.php";
@@ -51,7 +54,7 @@
                             <td class="text-center"><?php echo $Usuarios['descripcionTipoUsuario']; ?></td>
 
                             <td class="text-center">
-                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-success'>Editar</a>" ?>
+                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-success'>Recuperar Cuenta</a>" ?>
                             </td>
 
                             <td class="text-center">
@@ -76,4 +79,8 @@
 
     require_once "../helpers/footer.php";
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> main

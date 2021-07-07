@@ -27,5 +27,9 @@
     <script src="../assets/js/modDoctores/modificarDatosDoctor.js"></script>
     <script src="../assets/js/modDoctores/eliminarDatosDoctor.js"></script>
     <script src="../assets/js/modDoctores/reactivarDatosDoctor.js"></script>
-</body>
-</html>
+    <script src="../assets/js/modAbmlUsuarios/ajaxUsuarios.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/indeex.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
+    </body>
+
+    </html>
