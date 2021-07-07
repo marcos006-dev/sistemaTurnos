@@ -50,6 +50,7 @@ const validarNombrePersona = (paramNombrePers) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else if (paramNombrePers.length < 3) {
     ViualizarMensaje(
       "alertNombre",
@@ -57,9 +58,11 @@ const validarNombrePersona = (paramNombrePers) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertNombre", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarApellidoPersona = (paramApellidoPer) => {
@@ -72,6 +75,7 @@ const validarApellidoPersona = (paramApellidoPer) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else if (paramApellidoPer.length < 3) {
     ViualizarMensaje(
       "alertApellido",
@@ -79,9 +83,11 @@ const validarApellidoPersona = (paramApellidoPer) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertApellido", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarDniPersona = (paramDni) => {
@@ -94,9 +100,11 @@ const validarDniPersona = (paramDni) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertDni", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarTelefonoPersona = (paramTelefono) => {
@@ -108,9 +116,12 @@ const validarTelefonoPersona = (paramTelefono) => {
       "No se permite las letras y espacios en blanco y debe ser igual a 10 digitos",
       "text-danger"
     );
+    desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertTelefono", "✔", "text-success");
-    desactivarBtnGuardarUsuario();
+    activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarCorreoPersona = (paramCorreo) => {
@@ -123,9 +134,11 @@ const validarCorreoPersona = (paramCorreo) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertCorreo", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarNombreUsuario = (paramNombreUsuario) => {
@@ -138,6 +151,7 @@ const validarNombreUsuario = (paramNombreUsuario) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else if (paramNombreUsuario.length < 3) {
     ViualizarMensaje(
       "alertNombre",
@@ -145,9 +159,11 @@ const validarNombreUsuario = (paramNombreUsuario) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertNombreUsuario", "✔", "alert-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarContrasena = (paramContrasena) => {
@@ -161,6 +177,7 @@ const validarContrasena = (paramContrasena) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else if (patronContrasena.length < 8) {
     ViualizarMensaje(
       "alertContrasena",
@@ -168,9 +185,11 @@ const validarContrasena = (paramContrasena) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertContrasena", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarContrasenaVerificar = (paramContrasenaVerificar) => {
@@ -184,6 +203,7 @@ const validarContrasenaVerificar = (paramContrasenaVerificar) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else if (paramContrasenaVerificar != contrasena.value) {
     ViualizarMensaje(
       "alertContrasenaVerificada",
@@ -191,9 +211,11 @@ const validarContrasenaVerificar = (paramContrasenaVerificar) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertContrasenaVerificada", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 const validarTipoUsuario = (paramTipoUsuario) => {
@@ -204,13 +226,12 @@ const validarTipoUsuario = (paramTipoUsuario) => {
       "text-danger"
     );
     desactivarBtnGuardarUsuario();
+    return false;
   } else {
     ViualizarMensaje("alertTipoUsuario", "✔", "text-success");
     activarBtnGuardarUsuario();
+    return true;
   }
 };
 
-btnGuardarUsuario.addEventListener("click", (e) => {
-  e.preventDefault();
-  guardarDatosUsuario();
-});
+btnGuardarUsuario.addEventListener("click", (e) => {});
