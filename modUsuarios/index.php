@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> main
 <?php
     require_once "../helpers/head.php";
     require_once "../conexion/conexion.php";
@@ -79,8 +71,4 @@
 
     require_once "../helpers/footer.php";
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> main
