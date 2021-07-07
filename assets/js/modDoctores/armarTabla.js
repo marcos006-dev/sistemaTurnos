@@ -58,6 +58,8 @@ async function armarTablaTurnosxDia(
         `;
     });
     tablaTurnosxDia += `
+    <small>
+     (Estado Inactivo)</small>
     </tbody>
     <table>`;
     // console.log(tablaTurnosxDia);

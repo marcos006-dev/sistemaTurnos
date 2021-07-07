@@ -1,17 +1,19 @@
 <?php
-require_once "../helpers/head.php";
-require_once "../conexion/conexion.php";
+    require_once "../helpers/head.php";
+    require_once "../conexion/conexion.php";
 
-try {
-    $sqlListadoDoctores = "SELECT d1.idDoctor, e1.descripcionEspecialidad, p1.* FROM Doctores d1, Especialidades e1, Personas p1 WHERE d1.idPersona = p1.idPersona AND d1.idEspecialidad = e1.idEspecialidad";
-    $statement = $conexion->prepare( $sqlListadoDoctores );
-    $statement->execute();
-    $rowDoctores = $statement->rowCount() > 0 ? $statement : "";
-} catch ( Exception $e ) {
-    die( $e->getMessage() );
-}
+    try {
+        $sqlListadoDoctores = "SELECT d1.idDoctor, e1.descripcionEspecialidad, p1.* FROM Doctores d1, Especialidades e1, Personas p1 WHERE d1.idPersona = p1.idPersona AND d1.idEspecialidad = e1.idEspecialidad";
+        $statement = $conexion->prepare( $sqlListadoDoctores );
+        $statement->execute();
+        $rowDoctores = $statement->rowCount() > 0 ? $statement : "";
+    } catch ( Exception $e ) {
+        die( $e->getMessage() );
+    }
 
 ?>
+
+<?php if (isset( $_SESSION['nombreUsuario'])): ?>
 
 <section class="doctor_part section_padding">
   <div class="container">
@@ -49,12 +51,12 @@ try {
                     <td class="text-center"><?php echo $doctores['descripcionEspecialidad']; ?></td>
 
                     <td class="text-center"><?php echo "<a href='formEditarDoctores.php?id=" . $doctores['idDoctor'] . "' class='btn btn-warning'>Editar</a>" ?></td>
-                    <?php if ($doctores['estadoPersona'] == "1"): ?>
+                    <?php if ( $doctores['estadoPersona'] == "1" ): ?>
 
                         <td class="text-center"><?php echo "<a href='formEliminarDoctores.php?id=" . $doctores['idDoctor'] . "' class='btn btn-danger eliminar' onclick='eliminarDatos(event)'>Eliminar</a>" ?></td>
                     <?php else: ?>
-                        <td class="text-center"><?php echo "<a href='formEliminarDoctores.php?id=" . $doctores['idDoctor'] . "' class='btn btn-primary' onclick='eliminarDatos(event)'>Reactivar</a>" ?></td>
-                    <?php endif ?>
+                        <td class="text-center"><?php echo "<a href='formReactivarDoctores.php?id=" . $doctores['idDoctor'] . "' class='btn btn-primary' onclick='reactivarDoctor(event)'>Reactivar</a>" ?></td>
+                    <?php endif?>
                 </tr>
             <?php endwhile;?>
         </tbody>
@@ -68,6 +70,15 @@ try {
 
 <?php
 
-require_once "../helpers/footer.php";
+    require_once "../helpers/footer.php";
 
 ?>
+<?php else: ?>
+<?php 
+echo '<script language = javascript>
+    alert("Debe iniciar sesion para acceder a este modulo, vuelva a intentarlo")
+    self.location = "../modLogin/index.php"
+    </script>';
+
+ ?>
+<?php endif ?>
