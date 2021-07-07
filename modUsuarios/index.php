@@ -1,15 +1,15 @@
 <?php
-require_once "../helpers/head.php";
-require_once "../conexion/conexion.php";
+    require_once "../helpers/head.php";
+    require_once "../conexion/conexion.php";
 
-try {
-    $sqlListadoUsuarios = "SELECT u1.idUsuario, u1.nombreUsuario, u1.estadoUsuario, tu.descripcionTipoUsuario  FROM Usuarios u1, TipoUsuario tu WHERE tu.idTipoUsuario = u1.idTipoUsuario";
-    $statement = $conexion->prepare( $sqlListadoUsuarios );
-    $statement->execute();
-    $rowUsuarios = $statement->rowCount() > 0 ? $statement : "";
-} catch ( Exception $e ) {
-    die( $e->getMessage() );
-}
+    try {
+        $sqlListadoUsuarios = "SELECT u1.idUsuario, u1.nombreUsuario, u1.estadoUsuario, tu.descripcionTipoUsuario  FROM Usuarios u1, TipoUsuario tu WHERE tu.idTipoUsuario = u1.idTipoUsuario";
+        $statement = $conexion->prepare( $sqlListadoUsuarios );
+        $statement->execute();
+        $rowUsuarios = $statement->rowCount() > 0 ? $statement : "";
+    } catch ( Exception $e ) {
+        die( $e->getMessage() );
+    }
 
 ?>
 
@@ -44,7 +44,7 @@ try {
                                 <?php while ( $Usuarios = $rowUsuarios->fetch( PDO::FETCH_ASSOC ) ): ?>
                                     <tr>
                                         <td class="text-center"><?php echo $Usuarios['nombreUsuario']; ?></td>
-                                        <td class="text-center"><?php echo $Usuarios['estadoUsuario']; ?></td>
+                                        <td class="text-center"><?php echo $Usuarios['estadoUsuario'] == "1" ? "Activo" : "Inactivo"; ?></td>
                                         <td class="text-center"><?php echo $Usuarios['descripcionTipoUsuario']; ?></td>
 
                                         <td class="text-center">
@@ -54,17 +54,17 @@ try {
                                         <td class="text-center">
                                             <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-warning'>Editar</a>" ?>
                                         </td>
-                                        <?php if ($Usuarios["estadoUsuario"] == "1"): ?>
+                                        <?php if ( $Usuarios["estadoUsuario"] == "1" ): ?>
 
                                             <td class="text-center">
-                                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-danger'>Eliminar</a>" ?>
+                                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-danger' onclick='eliminarUsuario(event)'>Eliminar</a>" ?>
                                             </td>
                                         <?php else: ?>
                                             <td class="text-center">
-                                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-info'>Reactivar</a>" ?>
+                                                <?php echo "<a href='modSuscripciones/modifSuscripcion/editarFormSuscriptor.php?id=" . $Usuarios['idUsuario'] . "' class='btn btn-info' onclick='reactivarUsuario(event)'>Reactivar</a>" ?>
                                             </td>
 
-                                        <?php endif ?>
+                                        <?php endif?>
                                     </tr>
                                 <?php endwhile;?>
                             </tbody>
@@ -76,16 +76,16 @@ try {
         </div>
     </section>
 <?php else: ?>
-    <?php
+<?php
     echo '<script language = javascript>
     alert("Debe iniciar sesion para acceder a este modulo, vuelva a intentarlo")
     self.location = "../modLogin/index.php"
     </script>';
 
-    ?>
+?>
 <?php endif?>
 <?php
 
-require_once "../helpers/footer.php";
+    require_once "../helpers/footer.php";
 
 ?>

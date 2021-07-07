@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-session_start();
+    session_start();
 
- ?>
+?>
 
 <!doctype html>
     <html lang="en">
@@ -60,7 +60,7 @@ session_start();
                                 <a class="nav-link" href="#">Sacar turno</a>
                             </li>
 
-                            <?php if (!isset( $_SESSION['nombreUsuario'] )): ?>
+                            <?php if ( !isset( $_SESSION['nombreUsuario'] ) ): ?>
 
                               <li class="nav-item">
                                 <a class="nav-link" href="../modLogin/index.php">Iniciar Sesion</a>
@@ -69,19 +69,19 @@ session_start();
                             <li class="nav-item">
                               <a class="nav-link" href="#">Listado turnos</a>
                           </li>
-                          <?php if ($_SESSION['descripcionTipoUsuario'] == "Administrador"): ?>
+                          <?php if ( $_SESSION['descripcionTipoUsuario'] == "Administrador" ): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="../modDoctores/index.php">Doctores</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="../modUsuarios/index.php">Usuarios</a>
                           </li>
-                      <?php endif ?>
+                      <?php endif?>
                       <li class="nav-item">
-                          <a class="nav-link" href="../modLogin/logout.php">Cerrar Sesion</a>
+                          <a class="nav-link" href="../modLogin/logout.php">Cerrar Sesion <b> (<?php echo $_SESSION["nombreUsuario"]; ?>)</b></a>
                       </li>
 
-                  <?php endif ?>
+                  <?php endif?>
 
                                 <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
