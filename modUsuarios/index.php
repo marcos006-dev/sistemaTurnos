@@ -21,6 +21,8 @@
 
 ?>
 
+<?php if (isset( $_SESSION['nombreUsuario'])): ?>
+
 <section class="doctor_part section_padding">
     <div class="container">
         <div class="row">
