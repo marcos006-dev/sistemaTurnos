@@ -13,7 +13,7 @@
 
 ?>
 
-<?php if (isset( $_SESSION['nombreUsuario'])): ?>
+<?php if ( isset( $_SESSION['nombreUsuario'] ) ): ?>
 
 <section class="doctor_part section_padding">
   <div class="container">
@@ -74,11 +74,11 @@
 
 ?>
 <?php else: ?>
-<?php 
-echo '<script language = javascript>
+<?php
+    echo '<script language = javascript>
     alert("Debe iniciar sesion para acceder a este modulo, vuelva a intentarlo")
     self.location = "../modLogin/index.php"
     </script>';
 
- ?>
-<?php endif ?>
+?>
+<?php endif?>

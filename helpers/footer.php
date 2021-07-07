@@ -30,6 +30,7 @@
     <script src="../assets/js/modAbmlUsuarios/ajaxUsuarios.js"></script>
     <script src="../assets/js/modAbmlUsuarios/indeex.js"></script>
     <script src="../assets/js/modAbmlUsuarios/validarForm.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/confirmarRecup.js"></script>
     </body>
 
     </html>
