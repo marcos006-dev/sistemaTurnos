@@ -6,6 +6,7 @@
 
 
     $rowTipoUsuario = getTipoUsuario( $conexion );
+     $rowTiposUsuario = getTipoUsuario( $conexion );
     $rowDoctores = getDoctores($conexion)
 
     // var_dump( $rowEspecialidades->fetch( PDO::FETCH_ASSOC ) );
@@ -21,6 +22,8 @@
         Usuario</button>
 </div>
 
+<!-- Formulario para dar de alta a una persona con Usuario Incluido -->
+
 <div id="usuCompleto" class="formulario" style="display:none">
 
     <section class="doctor_part section_padding">
@@ -31,7 +34,7 @@
                 <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
                     <h1 class="text-center">Agregar Usuario Completo</h1>
 
-                    <form id="formAgregDoctor">
+                    <form id="formAgregPersonaUsuario">
                         <div class="form-group">
                             <label for="nombrePersona">Ingrese un nombre:</label>
                             <input type="text" class="form-control bg-secondary text-dark" id="nombrePersona"
@@ -95,9 +98,9 @@
                             <select id="comboTipoUsuario" class="form-control bg-secondary text-dark"
                                 name="comboTipoUsuario">
                                 <option value="0" selected disabled>Elija</option>
-                                <?php while ( $tipoUsu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
+                                <?php while ( $tipoUsuu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
                                 <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
-                                    <?php echo $tipoUsu['descripcionTipoUsuario']; ?></option>
+                                    <?php echo $tipoUsuu['descripcionTipoUsuario']; ?></option>
                                 <?php endwhile?>
                             </select>
                             <small id="alertTipoUsuario"></small>
@@ -119,6 +122,7 @@
     </section>
 </div>
 
+<!-- Formulario para asignar un Usuario a una persona ya dada de alta -->
 
 <div id="asignarUsuario" class="formulario" style="display:none">
     <section class="doctor_part section_padding">
@@ -133,37 +137,38 @@
 
                         <div class="form-group">
                             <label for="comboTipoUsuario">Seleccione un Doctor:</label>
-                            <select id="asignarTipoUsuario" class="form-control bg-secondary text-dark"
-                                name="comboTipoUsuario">
+                            <select id="asignarDoctor" class="form-control bg-secondary text-dark"
+                                name="asignarComboDoctor">
                                 <option value="0" selected disabled>Elija</option>
                                 <?php while ( $doctor = $rowDoctores->fetch( PDO::FETCH_ASSOC ) ): ?>
-                                <option value="<?php echo $doctor['idDoctor']; ?>">
+                                <option id="idPersona" data-idPersona="<?php echo $doctor['idPersona']; ?>"
+                                    value=" <?php echo $doctor['idDoctor']; ?>">
                                     <?php echo $doctor['nombrePersona']." ".$doctor['apellidoPersona']; ?></option>
                                 <?php endwhile?>
                             </select>
-                            <small id="alertTipoUsuario"></small>
+                            <small id="AsignarAlertTipoUsuario"></small>
                         </div>
 
 
                         <div class="form-group">
                             <label for="nombreUsuario">Ingrese un nombre de Usuario:</label>
                             <input type="text" class="form-control  bg-secondary text-dark" id="asignarNombreUsuario"
-                                name="nombreUsuario" aria-describedby="nombrenombreUsuarioDoctor" autofocus>
-                            <small id="alertNombreUsuario"></small>
+                                name="asignarNombreUsuario" aria-describedby="nombrenombreUsuarioDoctor" autofocus>
+                            <small id="AsignarAlertNombreUsuario"></small>
                         </div>
                         <div class="form-group">
                             <label for="apellidoDoctor">Ingrese una Contraseña:</label>
                             <input type="password" class="form-control  bg-secondary text-dark" id="asignarContrasena"
-                                name="contrasena" aria-describedby="apellidoDoctor" autofocus>
-                            <small id="alertContrasena"></small>
+                                name="asignarContrasena" aria-describedby="apellidoDoctor" autofocus>
+                            <small id="AsignarAlertContrasena"></small>
 
                         </div>
                         <div class="form-group">
                             <label for="apellidoDoctor">Vuelva a Ingrese la misma Contraseña:</label>
                             <input type="password" class="form-control  bg-secondary text-dark"
-                                id="asignarContrasenaVerificacion" name="contrasenaVerificacion"
+                                id="asignarContrasenaVerificacion" name="asignarContrasenaVerificacion"
                                 aria-describedby="apellidoDoctor" autofocus>
-                            <small id="alertContrasenaVerificada"></small>
+                            <small id="AsignarAlertContrasenaVerificada"></small>
 
                         </div>
 
@@ -171,14 +176,14 @@
                         <div class="form-group">
                             <label for="comboTipoUsuario">Seleccione el Tipo de Usuario:</label>
                             <select id="asignarComboTipoUsuario" class="form-control bg-secondary text-dark"
-                                name="comboTipoUsuario">
+                                name="asignarComboTipoUsuario">
                                 <option value="0" selected disabled>Elija</option>
-                                <?php while ( $tipoUsu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
+                                <?php while ( $tipoUsu = $rowTiposUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
                                 <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
                                     <?php echo $tipoUsu['descripcionTipoUsuario']; ?></option>
                                 <?php endwhile?>
                             </select>
-                            <small id="alertTipoUsuario"></small>
+                            <small id="AsignarAlertDoctor"></small>
                         </div>
 
 
@@ -186,7 +191,7 @@
                             <button type="submit" id="asignarBtnGuardarUsuario"
                                 class="btn btn-primary form-control">Guardar
                                 Usuario</button>
-                            <small id="alertBtn"></small>
+
 
                         </div>
                     </form>
