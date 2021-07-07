@@ -32,5 +32,5 @@ const activarBtnGuardarUsuario = () => {
 // funcion para mostrar mensaje de alerta
 const ViualizarMensaje = (paramNombreElemento, paramMensaje, paramClass) => {
   document.getElementById(paramNombreElemento).innerHTML = paramMensaje;
-  document.getElementById(paramNombreElemento).className = paramClass;
+  // document.getElementById(paramNombreElemento).className = paramClass;
 };
