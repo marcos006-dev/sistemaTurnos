@@ -91,7 +91,7 @@
                         </li>
                         <?php endif?>
                             <li class="nav-item">
-                              <a class="nav-link" href="./modLogin/logout.php">Cerrar Sesion <b> (<?php echo $_SESSION["nombreUsuario"]; ?>)</b></a>
+                              <a class="nav-link" href="./modLogin/logout.php">Cerrar Sesion <b> (<?php echo $_SESSION["nombreUsuario"] . "|" . $_SESSION["descripcionTipoUsuario"]; ?>)</b></a>
                             </li>
 
                   <?php endif?>
