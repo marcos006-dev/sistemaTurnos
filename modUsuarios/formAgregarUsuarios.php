@@ -99,7 +99,7 @@
                                 name="comboTipoUsuario">
                                 <option value="0" selected disabled>Elija</option>
                                 <?php while ( $tipoUsuu = $rowTipoUsuario->fetch( PDO::FETCH_ASSOC ) ): ?>
-                                <option value="<?php echo $tipoUsu['idTipoUsuario']; ?>">
+                                <option value="<?php echo $tipoUsuu['idTipoUsuario']; ?>">
                                     <?php echo $tipoUsuu['descripcionTipoUsuario']; ?></option>
                                 <?php endwhile?>
                             </select>
@@ -113,7 +113,8 @@
                             <button type="submit" id="btnGuardarUsuario" class="btn btn-primary form-control">Guardar
                                 Usuario</button>
                             <small id="alertBtn"></small>
-<input type="button" class=" btn btn-danger form-control mt-4" onClick="location.href='index.php'" value="Cancelar">
+                            <input type="button" class=" btn btn-danger form-control mt-4"
+                                onClick="location.href='index.php'" value="Cancelar">
                         </div>
                     </form>
                 </div>
@@ -129,7 +130,7 @@
 
         <div class="container">
 
-           <div class="row justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-xl-8 col-md-8 col-sm-8 col-xs-8 ">
                     <h1 class="text-center">Asigne un Usuario </h1>
 
@@ -192,7 +193,8 @@
                                 class="btn btn-primary form-control">Guardar
                                 Usuario</button>
 
-<input type="button" class=" btn btn-danger form-control mt-4" onClick="location.href='index.php'" value="Cancelar">
+                            <input type="button" class=" btn btn-danger form-control mt-4"
+                                onClick="location.href='index.php'" value="Cancelar">
 
                         </div>
                     </form>

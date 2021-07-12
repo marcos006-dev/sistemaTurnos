@@ -34,6 +34,8 @@
     <script src="../assets/js/modAbmlUsuarios/navigationsTabs.js"></script>
     <script src="../assets/js/modAbmlUsuarios/eliminarUsuario.js"></script>
     <script src="../assets/js/modAbmlUsuarios/reactivarUsuario.js"></script>
+    <script src="../assets/js/modAbmlUsuarios/validarFormAsignar.js"></script>
+
     </body>
 
     </html>
